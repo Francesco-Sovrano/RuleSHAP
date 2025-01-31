@@ -1,0 +1,33 @@
+,rule
+0,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous <= 0.700) and (neutral <= 0.700) and (common <= 0.700) then response: 0.420
+1,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous <= 0.700) and (neutral <= 0.700) and (common > 0.700) then response: 0.432
+2,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous <= 0.700) and (neutral > 0.700) and (conceptually dense <= 0.500) then response: 0.565
+3,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous <= 0.700) and (neutral > 0.700) and (conceptually dense > 0.500) then response: 0.404
+4,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous > 0.700) and (common <= 0.900) and (positive <= 0.700) then response: 0.432
+5,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous > 0.700) and (common <= 0.900) and (positive > 0.700) then response: 0.404
+6,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous > 0.700) and (common > 0.900) and (unambiguous <= 0.900) then response: 0.429
+7,If (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) and (unambiguous > 0.700) and (common > 0.900) and (unambiguous > 0.900) then response: 0.308
+8,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.700) and (positive <= 0.700) then response: 0.310
+9,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.700) and (positive > 0.700) then response: 0.399
+10,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.700) and (negative <= 0.500) then response: 0.352
+11,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.700) and (negative > 0.500) then response: 0.408
+12,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (socially controversial <= 0.900) and (interdisciplinary <= 0.900) then response: 0.383
+13,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (socially controversial <= 0.900) and (interdisciplinary > 0.900) then response: 0.449
+14,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (socially controversial > 0.900) and (interdisciplinary <= 0.900) then response: 0.355
+15,If (technically complicated <= 0.700) and (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (socially controversial > 0.900) and (interdisciplinary > 0.900) then response: 0.228
+16,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common <= 0.700) and (socially controversial <= 0.500) and (technically complicated <= 0.900) then response: 0.477
+17,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common <= 0.700) and (socially controversial <= 0.500) and (technically complicated > 0.900) then response: 0.414
+18,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common <= 0.700) and (socially controversial > 0.500) and (neutral <= 0.700) then response: 0.412
+19,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common <= 0.700) and (socially controversial > 0.500) and (neutral > 0.700) then response: 0.373
+20,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common > 0.700) and (socially controversial <= 0.500) and (negative <= 0.500) then response: 0.389
+21,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common > 0.700) and (socially controversial <= 0.500) and (negative > 0.500) then response: 0.459
+22,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common > 0.700) and (socially controversial > 0.500) and (common <= 0.900) then response: 0.429
+23,If (technically complicated > 0.700) and (socially controversial <= 0.700) and (common > 0.700) and (socially controversial > 0.500) and (common > 0.900) then response: 0.459
+24,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (subject to time variability <= 0.900) then response: 0.406
+25,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (subject to time variability > 0.900) then response: 0.370
+26,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (positive <= 0.700) then response: 0.400
+27,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (positive > 0.700) then response: 0.389
+28,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous > 0.700) and (common <= 0.700) and (negative <= 0.500) then response: 0.218
+29,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous > 0.700) and (common <= 0.700) and (negative > 0.500) then response: 0.357
+30,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous > 0.700) and (common > 0.700) and (subject to geographical variability <= 0.900) then response: 0.410
+31,If (technically complicated > 0.700) and (socially controversial > 0.700) and (unambiguous > 0.700) and (common > 0.700) and (subject to geographical variability > 0.900) then response: 0.429

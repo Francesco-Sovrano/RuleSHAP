@@ -1,0 +1,18 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.5 & positive <= 0.70 & subject to geographical variability > 0.70,rule,0.25,negative,0.25,0.2,314.38,309.35,7.17
+positive > 0.70 & subject to time variability <= 0.89,rule,0.73,positive,0.18,0.78,60.15,58.26,4.78
+positive <= 0.70 & neutral > 0.5,rule,0.26,negative,0.09,0.22,274.65,274.21,6.12
+technically complicated > 0.5 & positive <= 0.70,rule,0.25,negative,0.05,0.2,154.22,154.1,5.27
+positive > 0.30 & positive <= 0.70,rule,0.26,negative,0.04,0.2,181.68,181.03,5.42
+positive <= 0.70 & subject to geographical variability > 0.70,rule,0.26,negative,0.03,0.78,349.25,346.05,6.0
+positive > 0.70 & negative <= 0.5 & subject to time variability > 0.70,rule,0.57,positive,0.03,0.48,71.82,49.67,4.02
+technically complicated <= 0.70 & unambiguous > 0.70 & positive > 0.70 & subject to time variability <= 0.89,rule,0.37,positive,0.03,0.35,277.65,269.78,5.77
+positive <= 0.70 & negative <= 0.70,rule,0.19,negative,0.03,0.21,235.92,235.31,5.62
+positive > 0.70 & neutral > 0.70 & subject to time variability > 0.70,rule,0.64,positive,0.02,0.53,19.22,17.37,2.9
+socially controversial <= 0.89 & positive <= 0.70 & negative <= 0.70,rule,0.19,negative,0.02,0.21,165.47,164.04,5.19
+unambiguous > 0.70 & positive > 0.70,rule,0.62,positive,0.01,0.61,41.44,36.2,3.63
+technically complicated > 0.70 & positive <= 0.70 & neutral > 0.5,rule,0.17,negative,0.01,0.13,38.47,37.68,3.67
+technically complicated <= 0.70 & common > 0.70 & socially controversial <= 0.70 & unambiguous > 0.70 & neutral > 0.70,rule,0.25,positive,0.01,0.23,62.75,30.81,3.46
+technically complicated <= 0.70 & common > 0.70 & positive > 0.70 & neutral > 0.70 & subject to time variability <= 0.89,rule,0.29,positive,0.01,0.31,3.53,2.16,1.01
+common > 0.5 & socially controversial > 0.5 & positive > 0.5 & positive <= 0.70,rule,0.16,negative,0.0,0.13,114.11,112.26,4.74
+positive > 0.70 & positive <= 0.89 & negative <= 0.5,rule,0.59,positive,0.0,0.47,123.15,84.01,4.45

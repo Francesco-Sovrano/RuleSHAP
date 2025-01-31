@@ -1,0 +1,19 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+positive <= 0.70,rule,0.32,negative,0.58,0.8,866.62,866.62,10.66
+positive > 0.70,rule,0.68,positive,0.17,0.8,778.33,778.33,7.79
+socially controversial > 0.89 & positive > 0.30 & positive <= 0.5 & interdisciplinary <= 0.89,rule,0.02,positive,0.05,0.06,2.41,1.41,1.05
+technically complicated > 0.5 & technically complicated <= 0.70 & common > 0.70 & positive <= 0.70 & subject to geographical variability <= 0.89,rule,0.09,positive,0.04,0.07,114.38,112.77,4.91
+positive > 0.5 & positive <= 0.70,rule,0.23,negative,0.04,0.25,779.85,778.33,6.95
+socially controversial <= 0.89 & positive > 0.70,rule,0.65,positive,0.03,0.54,454.28,454.13,6.27
+unambiguous > 0.70 & positive <= 0.5,rule,0.03,negative,0.02,0.05,0.11,0.11,1.02
+technically complicated > 0.70 & positive <= 0.70,rule,0.2,negative,0.02,0.26,724.09,722.39,6.74
+positive <= 0.70 & negative <= 0.70,rule,0.05,negative,0.02,0.26,648.57,647.9,6.61
+common > 0.70 & positive > 0.70 & interdisciplinary > 0.70,rule,0.61,positive,0.02,0.54,543.74,543.45,6.44
+socially controversial <= 0.70 & positive > 0.70 & interdisciplinary > 0.70,rule,0.19,positive,0.01,0.17,63.62,32.21,3.5
+socially controversial <= 0.89 & positive > 0.70 & positive <= 0.89 & interdisciplinary > 0.70 & interdisciplinary <= 0.89,rule,0.59,positive,0.01,0.49,196.52,196.2,5.31
+positive > 0.70 & positive <= 0.89,rule,0.67,positive,0.01,0.54,518.19,518.19,6.29
+positive <= 0.70 & subject to geographical variability > 0.89,rule,0.09,negative,0.01,0.25,733.52,733.42,6.63
+technically complicated <= 0.70 & common > 0.70 & unambiguous <= 0.70 & positive <= 0.70 & subject to geographical variability <= 0.89,rule,0.06,positive,0.0,0.16,33.33,22.87,3.14
+positive <= 0.70 & neutral > 0.70,rule,0.03,negative,0.0,0.25,149.08,148.01,5.02
+technically complicated <= 0.70 & positive > 0.70 & positive <= 0.89 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.36,positive,0.0,0.3,4.84,4.35,1.47
+conceptually dense > 0.70 & socially controversial <= 0.89 & positive > 0.70 & positive <= 0.89 & interdisciplinary > 0.70,rule,0.54,positive,0.0,0.45,11.65,11.47,2.44

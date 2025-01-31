@@ -1,0 +1,24 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+positive <= 0.70 & interdisciplinary <= 0.89,rule,0.27,negative,0.39,0.26,560.93,510.34,8.65
+positive > 0.70,rule,0.68,positive,0.3,0.8,639.86,639.86,8.39
+positive <= 0.70 & interdisciplinary > 0.70 & interdisciplinary <= 0.89,rule,0.27,negative,0.06,0.72,685.82,678.0,6.94
+unambiguous <= 0.70 & positive > 0.5 & positive <= 0.70 & interdisciplinary <= 0.89,rule,0.17,negative,0.05,0.17,351.99,326.23,6.1
+unambiguous > 0.70 & positive <= 0.70,rule,0.07,negative,0.05,0.25,154.15,154.09,5.31
+common <= 0.89 & socially controversial > 0.89 & positive > 0.30 & positive <= 0.5,rule,0.02,positive,0.04,0.02,2.95,0.95,1.04
+technically complicated <= 0.70 & positive <= 0.70 & subject to geographical variability <= 0.89 & interdisciplinary > 0.70 & interdisciplinary <= 0.89,rule,0.09,positive,0.03,0.35,220.93,199.69,5.43
+technically complicated > 0.70 & positive <= 0.70 & interdisciplinary <= 0.89,rule,0.16,negative,0.03,0.32,316.89,289.04,5.83
+positive <= 0.70 & negative <= 0.70,rule,0.05,negative,0.03,0.26,463.6,459.86,6.29
+common > 0.70 & socially controversial <= 0.89 & positive > 0.70 & positive <= 0.89,rule,0.58,positive,0.02,0.47,233.87,233.65,5.59
+technically complicated > 0.70 & common > 0.70 & socially controversial <= 0.89 & positive <= 0.5,rule,0.04,negative,0.02,0.04,1.67,0.96,1.02
+positive > 0.5 & interdisciplinary > 0.89,rule,0.09,positive,0.02,0.08,6.7,6.61,1.93
+socially controversial <= 0.70 & positive > 0.70,rule,0.2,positive,0.01,0.17,118.1,61.56,4.14
+common <= 0.89 & positive > 0.5 & positive <= 0.70 & interdisciplinary <= 0.89 & subject to time variability > 0.70,rule,0.18,negative,0.01,0.16,52.49,38.29,3.68
+positive > 0.5 & positive <= 0.70 & interdisciplinary <= 0.89,rule,0.19,negative,0.01,0.22,356.67,313.21,5.79
+positive <= 0.70 & neutral > 0.70,rule,0.03,negative,0.01,0.27,142.79,83.16,4.48
+technically complicated > 0.70 & socially controversial > 0.70 & interdisciplinary <= 0.89,rule,0.36,negative,0.0,0.55,37.88,21.09,3.05
+positive > 0.70 & negative <= 0.70,rule,0.59,positive,0.0,0.55,459.91,459.86,6.13
+positive > 0.70 & neutral > 0.70,rule,0.31,positive,0.0,0.27,142.79,83.16,4.43
+common > 0.70 & unambiguous <= 0.70 & interdisciplinary > 0.89,rule,0.07,positive,0.0,0.48,4.42,4.13,1.43
+socially controversial > 0.70 & interdisciplinary <= 0.89,rule,0.69,negative,0.0,0.72,5.38,3.52,1.26
+technically complicated <= 0.70 & unambiguous > 0.70 & positive > 0.70 & positive <= 0.89,rule,0.18,positive,0.0,0.3,34.35,34.12,3.53
+technically complicated > 0.5 & technically complicated <= 0.70 & common > 0.70 & socially controversial <= 0.89,rule,0.39,positive,0.0,0.35,0.47,0.3,1.0

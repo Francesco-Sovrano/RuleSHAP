@@ -1,3 +1,13 @@
+.env
+.DS_Store
+.ipynb_checkpoints
+
+cache/*.pkl
+cache/*.csv
+abstract_model_io/*.pkl
+abstract_model_io/*.csv
+old/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,15 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.89,rule,0.01,positive,13.47,0.8,9814.28,9814.28,133.0
+common <= 0.89,rule,0.99,negative,0.83,0.8,10037.06,10037.06,16.82
+common > 0.89 & unambiguous > 0.30,rule,0.0,positive,0.71,0.8,7482.84,5453.47,14.7
+conceptually dense <= 0.89 & common <= 0.89 & unambiguous > 0.30 & interdisciplinary > 0.5 & subject to time variability <= 0.89,rule,0.99,negative,0.27,0.8,755.04,745.99,8.43
+conceptually dense <= 0.89 & common <= 0.89 & socially controversial <= 0.89,rule,0.98,negative,0.15,0.79,3104.97,2900.28,9.18
+conceptually dense <= 0.89 & common <= 0.89 & unambiguous > 0.30 & unambiguous <= 0.70 & subject to geographical variability <= 0.89,rule,0.98,negative,0.1,0.79,6017.31,4668.04,9.33
+conceptually dense <= 0.89 & common <= 0.89 & unambiguous > 0.30 & interdisciplinary > 0.70,rule,0.96,negative,0.1,0.77,1623.47,1572.47,8.06
+socially controversial <= 0.89 & unambiguous <= 0.70 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.94,positive,0.06,0.76,450.57,447.17,6.48
+conceptually dense <= 0.89 & common <= 0.89 & unambiguous > 0.5 & unambiguous <= 0.70,rule,0.97,negative,0.02,0.78,6115.7,6111.35,8.93
+unambiguous > 0.5 & unambiguous <= 0.70 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.94,positive,0.01,0.75,147.67,147.17,5.04
+socially controversial <= 0.89 & unambiguous <= 0.70 & negative > 0.5 & negative <= 0.89 & interdisciplinary > 0.70,rule,0.67,positive,0.01,0.65,3.48,2.01,1.01
+technically complicated <= 0.70 & common <= 0.89 & socially controversial <= 0.89 & unambiguous > 0.30,rule,0.46,negative,0.0,0.79,4079.55,3672.52,8.22
+socially controversial > 0.5 & socially controversial <= 0.89 & unambiguous > 0.5 & negative <= 0.70,rule,0.47,positive,0.0,0.37,145.58,144.08,4.99
+conceptually dense <= 0.89 & common <= 0.89 & socially controversial > 0.5 & unambiguous > 0.30 & negative > 0.5,rule,0.78,negative,0.0,0.62,789.61,718.85,6.61

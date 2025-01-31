@@ -1,0 +1,6 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.5 & positive > 0.5,rule,0.01,positive,15.78,0.72,7033.96,7026.76,148.65
+common <= 0.5,rule,0.01,positive,1.02,0.8,10732.85,10732.85,18.75
+common <= 0.5 & socially controversial > 0.5 & positive > 0.5,rule,0.01,positive,0.93,0.52,2777.46,2766.78,15.29
+common <= 0.5 & socially controversial > 0.70,rule,0.0,positive,0.13,0.39,421.26,418.66,6.82
+common <= 0.5 & socially controversial > 0.5 & negative > 0.5 & negative <= 0.70,rule,0.0,positive,0.07,0.23,1216.27,1186.48,7.6

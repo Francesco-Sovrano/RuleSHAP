@@ -1,0 +1,27 @@
+,rule
+0,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (conceptually dense <= 0.700) then response: 0.122
+1,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (conceptually dense > 0.700) then response: 0.040
+2,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (negative <= 0.900) then response: 0.078
+3,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (negative > 0.900) then response: -0.300
+4,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (socially controversial <= 0.700) then response: -0.005
+5,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (socially controversial > 0.700) then response: 0.035
+6,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous > 0.700) and (technically complicated > 0.700) and (positive <= 0.300) then response: 0.125
+7,If (interdisciplinary <= 0.900) and (positive <= 0.700) and (unambiguous > 0.700) and (technically complicated > 0.700) and (positive > 0.300) then response: -0.004
+8,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (common <= 0.700) then response: -0.015
+9,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (common > 0.700) then response: 0.005
+10,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (neutral <= 0.700) then response: -0.013
+11,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (neutral > 0.700) then response: -0.070
+12,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous > 0.700) and (positive <= 0.900) and (interdisciplinary <= 0.700) then response: -0.023
+13,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous > 0.700) and (positive <= 0.900) and (interdisciplinary > 0.700) then response: 0.019
+14,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous > 0.700) and (positive > 0.900) and (interdisciplinary <= 0.500) then response: -0.280
+15,If (interdisciplinary <= 0.900) and (positive > 0.700) and (unambiguous > 0.700) and (positive > 0.900) and (interdisciplinary > 0.500) then response: 0.069
+16,If (interdisciplinary > 0.900) and (unambiguous <= 0.500) and (positive <= 0.700) then response: -0.500
+17,If (interdisciplinary > 0.900) and (unambiguous <= 0.500) and (positive > 0.700) then response: 0.000
+18,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (socially controversial <= 0.500) then response: -0.100
+19,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous <= 0.700) and (subject to geographical variability <= 0.900) and (socially controversial > 0.500) then response: 0.077
+20,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (positive <= 0.500) then response: -0.005
+21,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous <= 0.700) and (subject to geographical variability > 0.900) and (positive > 0.500) then response: 0.118
+22,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous > 0.700) and (positive <= 0.500) and (subject to geographical variability <= 0.900) then response: 0.208
+23,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous > 0.700) and (positive <= 0.500) and (subject to geographical variability > 0.900) then response: 0.131
+24,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous > 0.700) and (positive > 0.500) and (common <= 0.900) then response: 0.119
+25,If (interdisciplinary > 0.900) and (unambiguous > 0.500) and (unambiguous > 0.700) and (positive > 0.500) and (common > 0.900) then response: 0.032

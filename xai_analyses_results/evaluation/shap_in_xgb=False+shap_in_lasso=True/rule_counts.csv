@@ -1,0 +1,5 @@
+LLM,easy,medium,hard,total
+gpt-3.5-turbo,167,203,181,551
+gpt-4o-mini,342,391,379,1112
+gpt-4o,749,640,751,2140
+llama3.1,491,458,532,1481

@@ -1,0 +1,11 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.5,rule,0.01,positive,1256.41,0.8,86221872.0,86221872.0,22975.87
+interdisciplinary,linear,,negative,632.04,,,,
+common <= 0.5 & unambiguous <= 0.70 & interdisciplinary > 0.70,rule,0.01,positive,144.47,0.01,10262509.0,9855867.0,2342.66
+positive,linear,,positive,84.25,,,,
+common <= 0.5 & negative <= 0.5,rule,0.01,positive,76.2,0.01,55413584.0,55100528.0,1376.09
+common > 0.5 & common <= 0.89 & socially controversial <= 0.89 & positive <= 0.70 & interdisciplinary > 0.70,rule,0.24,negative,10.79,0.2,2783111.54,2661919.75,174.39
+common > 0.5 & common <= 0.89 & positive <= 0.70 & neutral > 0.5 & interdisciplinary > 0.70,rule,0.24,negative,9.17,0.19,1520993.5,1463163.0,144.34
+common > 0.70 & unambiguous > 0.70 & positive > 0.30 & interdisciplinary > 0.70,rule,0.56,negative,7.33,0.45,37445.37,25574.25,84.57
+common > 0.70 & common <= 0.89 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.63,negative,5.49,0.51,27369.9,18772.78,63.82
+technically complicated <= 0.70 & common > 0.5 & positive > 0.70 & negative <= 0.70 & interdisciplinary > 0.70,rule,0.37,negative,2.08,0.29,350087.55,312182.91,38.93

@@ -1,0 +1,4 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+technically complicated > 0.70 & positive > 0.5 & subject to geographical variability > 0.70 & subject to time variability > 0.70 & subject to time variability <= 0.89,rule,0.41,negative,0.03,0.38,1.88,1.02,1.03
+technically complicated > 0.5 & common > 0.70 & positive > 0.5 & negative <= 0.70 & subject to geographical variability > 0.70,rule,0.53,negative,0.03,0.62,1.86,0.99,1.03
+technically complicated <= 0.70 & subject to geographical variability > 0.70 & subject to time variability <= 0.89,rule,0.49,positive,0.0,0.41,1.45,1.39,1.0

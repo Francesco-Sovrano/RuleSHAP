@@ -1,0 +1,19 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+technically complicated > 0.70 & common > 0.5 & positive > 0.5 & positive <= 0.70 & subject to geographical variability > 0.70,rule,0.11,negative,0.04,0.09,6.96,4.42,1.54
+socially controversial > 0.5 & positive <= 0.70 & subject to geographical variability > 0.70,rule,0.25,negative,0.04,0.6,11.01,8.08,2.17
+common <= 0.89 & socially controversial <= 0.89 & positive <= 0.70,rule,0.25,negative,0.04,0.2,8.45,8.3,2.21
+positive > 0.70 & subject to geographical variability > 0.70,rule,0.72,positive,0.03,0.59,17.56,17.52,2.96
+technically complicated > 0.70 & common > 0.5 & socially controversial > 0.5,rule,0.43,negative,0.02,0.38,1.59,0.86,1.02
+common <= 0.89 & socially controversial <= 0.5 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.2,positive,0.02,0.16,3.5,3.11,1.16
+common <= 0.89 & positive > 0.5 & positive <= 0.70 & subject to geographical variability > 0.70,rule,0.17,negative,0.02,0.2,7.51,6.94,1.98
+technically complicated > 0.70 & common > 0.5 & socially controversial > 0.5 & negative <= 0.5,rule,0.22,negative,0.01,0.21,1.06,0.49,1.01
+common > 0.5 & common <= 0.89 & positive <= 0.70,rule,0.25,negative,0.01,0.21,5.79,5.7,1.76
+common > 0.5 & positive <= 0.70,rule,0.26,negative,0.01,0.2,22.8,22.51,3.14
+socially controversial <= 0.5 & positive > 0.70 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.19,positive,0.01,0.15,3.38,2.71,1.01
+common > 0.70 & socially controversial <= 0.5 & interdisciplinary > 0.70,rule,0.17,positive,0.01,0.16,4.31,4.26,1.46
+technically complicated <= 0.70 & common > 0.70 & positive > 0.70 & positive <= 0.89 & subject to geographical variability > 0.70,rule,0.3,positive,0.0,0.32,3.91,2.56,1.0
+common > 0.70 & common <= 0.89 & socially controversial <= 0.5,rule,0.21,positive,0.0,0.56,3.15,3.07,1.12
+socially controversial > 0.5 & negative <= 0.5 & neutral > 0.70 & subject to geographical variability > 0.70 & subject to time variability <= 0.89,rule,0.35,negative,0.0,0.44,1.06,0.97,1.0
+technically complicated > 0.70 & common <= 0.89 & socially controversial > 0.70 & subject to geographical variability > 0.70,rule,0.3,negative,0.0,0.39,0.81,0.56,1.0
+common > 0.5 & common <= 0.89 & socially controversial > 0.5 & interdisciplinary > 0.70,rule,0.71,negative,0.0,0.58,0.43,0.32,1.0
+common > 0.5 & socially controversial > 0.5 & subject to geographical variability > 0.70,rule,0.74,negative,0.0,0.77,0.2,0.18,1.0

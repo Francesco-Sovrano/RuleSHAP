@@ -1,0 +1,11 @@
+,rule
+0,If (common <= 0.900) then response: 0.000
+1,If (common > 0.900) and (socially controversial <= 0.500) and (positive <= 0.900) and (technically complicated <= 0.500) and (interdisciplinary <= 0.700) then response: 13.000
+2,If (common > 0.900) and (socially controversial <= 0.500) and (positive <= 0.900) and (technically complicated <= 0.500) and (interdisciplinary > 0.700) then response: 12.900
+3,If (common > 0.900) and (socially controversial <= 0.500) and (positive <= 0.900) and (technically complicated > 0.500) and (interdisciplinary <= 0.700) then response: 14.467
+4,If (common > 0.900) and (socially controversial <= 0.500) and (positive <= 0.900) and (technically complicated > 0.500) and (interdisciplinary > 0.700) then response: 15.075
+5,If (common > 0.900) and (socially controversial <= 0.500) and (positive > 0.900) then response: 16.200
+6,If (common > 0.900) and (socially controversial > 0.500) and (neutral <= 0.500) then response: 18.100
+7,If (common > 0.900) and (socially controversial > 0.500) and (neutral > 0.500) and (technically complicated <= 0.500) then response: 14.200
+8,If (common > 0.900) and (socially controversial > 0.500) and (neutral > 0.500) and (technically complicated > 0.500) and (socially controversial <= 0.900) then response: 16.195
+9,If (common > 0.900) and (socially controversial > 0.500) and (neutral > 0.500) and (technically complicated > 0.500) and (socially controversial > 0.900) then response: 15.050

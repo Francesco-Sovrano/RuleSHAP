@@ -1,0 +1,32 @@
+,rule
+0,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative <= 0.500) and (negative <= 0.300) and (socially controversial <= 0.300) then response: 11.531
+1,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative <= 0.500) and (negative <= 0.300) and (socially controversial > 0.300) then response: 13.772
+2,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative <= 0.500) and (negative > 0.300) and (socially controversial <= 0.500) then response: 14.360
+3,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative <= 0.500) and (negative > 0.300) and (socially controversial > 0.500) then response: 12.656
+4,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative > 0.500) and (positive <= 0.700) and (common <= 0.700) then response: 9.970
+5,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative > 0.500) and (positive <= 0.700) and (common > 0.700) then response: 11.765
+6,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative > 0.500) and (positive > 0.700) and (common <= 0.700) then response: 8.986
+7,If (technically complicated <= 0.700) and (conceptually dense <= 0.700) and (negative > 0.500) and (positive > 0.700) and (common > 0.700) then response: 9.935
+8,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial <= 0.500) and (socially controversial <= 0.300) and (subject to time variability <= 0.700) then response: 11.990
+9,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial <= 0.500) and (socially controversial <= 0.300) and (subject to time variability > 0.700) then response: 14.050
+10,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial <= 0.500) and (socially controversial > 0.300) and (interdisciplinary <= 0.700) then response: 15.001
+11,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial <= 0.500) and (socially controversial > 0.300) and (interdisciplinary > 0.700) then response: 15.580
+12,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial > 0.500) and (interdisciplinary <= 0.700) and (subject to geographical variability <= 0.700) then response: 18.270
+13,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial > 0.500) and (interdisciplinary <= 0.700) and (subject to geographical variability > 0.700) then response: 14.167
+14,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial > 0.500) and (interdisciplinary > 0.700) and (positive <= 0.700) then response: 15.952
+15,If (technically complicated <= 0.700) and (conceptually dense > 0.700) and (socially controversial > 0.500) and (interdisciplinary > 0.700) and (positive > 0.700) then response: 16.621
+16,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial <= 0.500) and (interdisciplinary <= 0.700) and (subject to geographical variability <= 0.700) then response: 13.115
+17,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial <= 0.500) and (interdisciplinary <= 0.700) and (subject to geographical variability > 0.700) then response: 15.166
+18,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial <= 0.500) and (interdisciplinary > 0.700) and (positive <= 0.700) then response: 17.217
+19,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial <= 0.500) and (interdisciplinary > 0.700) and (positive > 0.700) then response: 16.213
+20,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial > 0.500) and (positive <= 0.700) and (socially controversial <= 0.700) then response: 16.525
+21,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial > 0.500) and (positive <= 0.700) and (socially controversial > 0.700) then response: 17.565
+22,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial > 0.500) and (positive > 0.700) and (subject to geographical variability <= 0.700) then response: 14.920
+23,If (technically complicated > 0.700) and (negative <= 0.500) and (socially controversial > 0.500) and (positive > 0.700) and (subject to geographical variability > 0.700) then response: 18.102
+24,If (technically complicated > 0.700) and (negative > 0.500) and (positive <= 0.500) and (interdisciplinary <= 0.700) then response: 13.240
+25,If (technically complicated > 0.700) and (negative > 0.500) and (positive <= 0.500) and (interdisciplinary > 0.700) and (subject to time variability <= 0.900) then response: 16.493
+26,If (technically complicated > 0.700) and (negative > 0.500) and (positive <= 0.500) and (interdisciplinary > 0.700) and (subject to time variability > 0.900) then response: 15.885
+27,If (technically complicated > 0.700) and (negative > 0.500) and (positive > 0.500) and (subject to time variability <= 0.900) and (common <= 0.500) then response: 18.703
+28,If (technically complicated > 0.700) and (negative > 0.500) and (positive > 0.500) and (subject to time variability <= 0.900) and (common > 0.500) then response: 17.180
+29,If (technically complicated > 0.700) and (negative > 0.500) and (positive > 0.500) and (subject to time variability > 0.900) and (neutral <= 0.700) then response: 16.695
+30,If (technically complicated > 0.700) and (negative > 0.500) and (positive > 0.500) and (subject to time variability > 0.900) and (neutral > 0.700) then response: 14.723

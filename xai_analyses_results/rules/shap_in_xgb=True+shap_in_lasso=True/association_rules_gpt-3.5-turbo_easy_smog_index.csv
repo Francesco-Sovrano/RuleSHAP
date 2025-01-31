@@ -1,0 +1,13 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.89,rule,0.99,negative,13.33,0.8,7188.21,7188.21,127.22
+common > 0.89 & socially controversial > 0.5,rule,0.01,positive,0.8,0.6,989.59,989.31,12.44
+technically complicated > 0.5 & common > 0.89,rule,0.01,positive,0.77,0.72,1486.06,1485.85,12.95
+common > 0.89 & socially controversial > 0.30 & positive > 0.30,rule,0.01,positive,0.66,0.77,1109.91,1106.89,11.65
+common > 0.89 & neutral <= 0.70,rule,0.0,positive,0.25,0.15,2210.06,2199.72,9.6
+technically complicated > 0.5 & common > 0.89 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.01,positive,0.14,0.68,1371.91,1368.16,8.25
+common > 0.89 & socially controversial <= 0.89 & neutral > 0.5,rule,0.01,positive,0.07,0.8,1248.32,1243.88,7.61
+common > 0.89,rule,0.01,positive,0.0,0.8,7188.21,7188.21,8.88
+socially controversial <= 0.89 & negative <= 0.70 & neutral > 0.5 & subject to geographical variability > 0.70 & subject to time variability <= 0.89,rule,0.89,negative,0.0,0.74,118.81,48.74,3.89
+socially controversial <= 0.70 & unambiguous > 0.70 & positive > 0.70 & positive <= 0.89,rule,0.42,negative,0.0,0.35,10.22,8.48,2.14
+socially controversial <= 0.89 & unambiguous > 0.70 & positive <= 0.89 & negative <= 0.70 & subject to time variability <= 0.89,rule,0.7,negative,0.0,0.59,48.64,36.6,3.6
+positive <= 0.89 & neutral > 0.70 & subject to time variability > 0.70 & subject to time variability <= 0.89,rule,0.79,negative,0.0,0.76,5.06,4.52,1.51

@@ -1,0 +1,16 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.5 & positive > 0.5,rule,0.05,positive,12.05,0.05,92197.32,62310.44,144.05
+common <= 0.5 & positive > 0.5 & interdisciplinary > 0.5,rule,0.05,positive,2.19,0.05,23039.31,12320.53,30.06
+common <= 0.5 & positive > 0.5 & interdisciplinary <= 0.70,rule,0.01,positive,1.98,0.04,93101.68,64053.21,33.03
+common > 0.30 & common <= 0.5 & positive > 0.5 & interdisciplinary <= 0.70,rule,0.01,positive,1.55,0.04,16603.75,8441.09,23.02
+common <= 0.5 & positive > 0.5 & positive <= 0.70,rule,0.01,positive,1.09,0.03,40891.74,22669.87,20.96
+common > 0.30 & common <= 0.5 & positive > 0.5,rule,0.05,positive,0.91,0.05,74869.28,50202.36,20.68
+common > 0.30 & common <= 0.5 & socially controversial > 0.70 & positive > 0.5,rule,0.02,positive,0.39,0.03,8537.87,4381.07,11.63
+common > 0.30 & common <= 0.5 & positive > 0.5 & interdisciplinary > 0.5,rule,0.04,positive,0.35,0.05,15136.52,7810.19,12.13
+common <= 0.5 & positive > 0.5 & negative > 0.70,rule,0.02,positive,0.22,0.04,11234.79,6438.23,10.73
+common <= 0.5 & socially controversial > 0.5 & positive > 0.70,rule,0.03,positive,0.15,0.03,29987.48,29926.15,11.84
+technically complicated > 0.5 & common <= 0.5 & positive > 0.5,rule,0.04,positive,0.15,0.05,4671.59,3018.66,9.22
+common <= 0.5 & unambiguous <= 0.70 & positive > 0.5 & neutral <= 0.70,rule,0.02,positive,0.07,0.03,53318.19,35462.48,11.26
+common,linear,,negative,0.02,,,,
+common > 0.30 & common <= 0.5,rule,0.06,positive,0.02,0.05,61620.55,61307.91,11.23
+conceptually dense > 0.70 & common > 0.30 & common <= 0.5,rule,0.04,positive,0.0,0.05,580.97,569.12,6.36

@@ -1,0 +1,10 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+conceptually dense,linear,,positive,5.57,,,,
+technically complicated <= 0.70 & common > 0.5 & socially controversial > 0.30 & socially controversial <= 0.70 & subject to time variability > 0.70,rule,0.29,negative,0.54,0.24,483.25,228.25,8.34
+conceptually dense > 0.70 & socially controversial > 0.5 & negative > 0.30,rule,0.74,positive,0.47,0.59,1599.32,861.73,9.97
+conceptually dense > 0.70 & socially controversial > 0.5 & positive > 0.5 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.63,positive,0.46,0.57,1330.77,632.67,9.4
+conceptually dense > 0.70 & common <= 0.70 & interdisciplinary > 0.70 & subject to time variability > 0.70 & subject to time variability <= 0.89,rule,0.28,positive,0.42,0.72,253.17,122.18,6.82
+conceptually dense > 0.70 & technically complicated > 0.70 & positive > 0.5 & negative > 0.30 & subject to time variability <= 0.89,rule,0.41,positive,0.35,0.66,294.12,199.12,7.17
+negative > 0.30 & interdisciplinary > 0.70 & subject to time variability > 0.70 & subject to time variability <= 0.89,rule,0.9,positive,0.24,0.73,65.83,27.97,4.15
+conceptually dense > 0.70 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.89,positive,0.16,0.73,88.56,48.73,4.5
+socially controversial > 0.70 & negative > 0.30 & subject to time variability > 0.70 & subject to time variability <= 0.89,rule,0.48,positive,0.09,0.76,225.78,142.5,5.41

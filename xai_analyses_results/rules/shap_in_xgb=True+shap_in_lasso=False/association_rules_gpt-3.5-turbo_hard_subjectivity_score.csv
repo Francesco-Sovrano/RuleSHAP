@@ -1,0 +1,20 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.89 & socially controversial <= 0.89 & positive <= 0.70,rule,0.25,negative,0.05,0.2,8.45,8.3,2.22
+common <= 0.89 & socially controversial <= 0.5 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.2,positive,0.04,0.16,3.5,3.11,1.18
+technically complicated > 0.5 & common > 0.5 & positive > 0.5 & positive <= 0.70 & negative <= 0.70,rule,0.14,negative,0.03,0.15,3.78,2.58,1.03
+positive > 0.70 & positive <= 0.89 & subject to time variability > 0.70,rule,0.72,positive,0.03,0.59,7.86,7.78,2.11
+technically complicated > 0.70 & common > 0.5 & socially controversial > 0.5,rule,0.43,negative,0.02,0.38,1.59,0.86,1.02
+positive > 0.70 & positive <= 0.89,rule,0.74,positive,0.02,0.59,2.98,2.94,1.1
+technically complicated > 0.70 & common > 0.5 & positive > 0.5 & positive <= 0.70 & subject to geographical variability > 0.70,rule,0.11,negative,0.02,0.09,6.96,4.42,1.52
+common > 0.5 & common <= 0.89 & positive <= 0.70,rule,0.25,negative,0.02,0.21,5.79,5.7,1.77
+common > 0.5 & positive <= 0.70,rule,0.26,negative,0.01,0.2,22.8,22.51,3.14
+positive > 0.70 & subject to geographical variability > 0.70,rule,0.72,positive,0.01,0.59,17.56,17.52,2.89
+socially controversial <= 0.5 & interdisciplinary > 0.70,rule,0.2,positive,0.01,0.35,2.53,2.22,1.01
+common > 0.5 & common <= 0.89 & socially controversial > 0.5 & interdisciplinary > 0.70,rule,0.71,negative,0.0,0.58,0.43,0.32,1.0
+technically complicated > 0.70 & common > 0.5 & socially controversial > 0.5 & negative <= 0.5,rule,0.22,negative,0.0,0.21,1.06,0.49,1.0
+technically complicated <= 0.70 & common > 0.70 & positive > 0.70 & positive <= 0.89 & subject to geographical variability > 0.70,rule,0.3,positive,0.0,0.32,3.91,2.56,1.0
+conceptually dense > 0.70 & technically complicated > 0.70 & socially controversial > 0.5 & negative <= 0.5 & interdisciplinary > 0.70,rule,0.23,negative,0.0,0.29,3.49,2.59,1.0
+technically complicated <= 0.70 & common > 0.70 & negative > 0.30 & neutral > 0.70 & subject to time variability <= 0.89,rule,0.31,positive,0.0,0.34,2.09,1.03,1.0
+common > 0.70 & common <= 0.89 & unambiguous > 0.70 & neutral > 0.70 & subject to time variability <= 0.89,rule,0.5,positive,0.0,0.41,2.44,1.39,1.0
+common > 0.70 & socially controversial <= 0.5 & interdisciplinary > 0.70,rule,0.17,positive,0.0,0.16,4.31,4.26,1.45
+socially controversial > 0.5 & socially controversial <= 0.89 & negative <= 0.5 & neutral > 0.5,rule,0.38,negative,0.0,0.54,0.28,0.15,1.0

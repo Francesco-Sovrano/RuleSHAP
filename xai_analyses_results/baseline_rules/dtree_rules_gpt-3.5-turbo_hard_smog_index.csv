@@ -1,0 +1,11 @@
+,rule
+0,If (common <= 0.500) and (positive <= 0.500) then response: 0.000
+1,If (common <= 0.500) and (positive > 0.500) and (socially controversial <= 0.700) and (conceptually dense <= 0.700) and (positive <= 0.700) then response: 17.300
+2,If (common <= 0.500) and (positive > 0.500) and (socially controversial <= 0.700) and (conceptually dense <= 0.700) and (positive > 0.700) then response: 22.900
+3,If (common <= 0.500) and (positive > 0.500) and (socially controversial <= 0.700) and (conceptually dense > 0.700) and (negative <= 0.500) then response: 17.235
+4,If (common <= 0.500) and (positive > 0.500) and (socially controversial <= 0.700) and (conceptually dense > 0.700) and (negative > 0.500) then response: 20.400
+5,If (common <= 0.500) and (positive > 0.500) and (socially controversial > 0.700) and (interdisciplinary <= 0.700) and (neutral <= 0.700) then response: 21.200
+6,If (common <= 0.500) and (positive > 0.500) and (socially controversial > 0.700) and (interdisciplinary <= 0.700) and (neutral > 0.700) then response: 20.900
+7,If (common <= 0.500) and (positive > 0.500) and (socially controversial > 0.700) and (interdisciplinary > 0.700) and (positive <= 0.700) then response: 19.100
+8,If (common <= 0.500) and (positive > 0.500) and (socially controversial > 0.700) and (interdisciplinary > 0.700) and (positive > 0.700) then response: 18.060
+9,If (common > 0.500) then response: 0.000

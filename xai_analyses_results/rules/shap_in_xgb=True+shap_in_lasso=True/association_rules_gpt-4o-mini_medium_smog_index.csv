@@ -1,0 +1,5 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common <= 0.5 & positive > 0.5,rule,0.0,positive,14.77,0.73,2212.38,2211.1,121.43
+conceptually dense > 0.5 & common <= 0.5 & positive > 0.5,rule,0.0,positive,1.85,0.72,217.62,216.53,15.35
+technically complicated > 0.5 & common <= 0.5 & positive > 0.5,rule,0.0,positive,0.43,0.69,923.73,920.17,9.76
+common > 0.5,rule,1.0,negative,0.35,0.8,3155.08,3155.08,10.88

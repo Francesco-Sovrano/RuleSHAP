@@ -1,0 +1,15 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.70 & socially controversial <= 0.70 & unambiguous > 0.70 & negative <= 0.5,rule,0.35,negative,0.01,0.34,0.5,0.31,1.01
+technically complicated > 0.5 & common > 0.70 & negative <= 0.70 & subject to geographical variability > 0.70 & subject to time variability > 0.70,rule,0.56,negative,0.01,0.45,0.31,0.15,1.01
+technically complicated <= 0.70 & common <= 0.89 & negative > 0.5 & subject to time variability > 0.70,rule,0.16,positive,0.01,0.29,0.35,0.25,1.01
+conceptually dense > 0.70 & common <= 0.89 & socially controversial > 0.5 & socially controversial <= 0.70 & subject to geographical variability > 0.70,rule,0.23,negative,0.01,0.19,0.17,0.07,1.01
+common > 0.70 & socially controversial > 0.70 & neutral > 0.70 & subject to geographical variability > 0.70 & subject to time variability <= 0.89,rule,0.19,positive,0.01,0.25,0.23,0.16,1.01
+technically complicated <= 0.70 & common > 0.70 & common <= 0.89 & subject to geographical variability > 0.70 & subject to time variability > 0.70,rule,0.35,positive,0.01,0.53,0.14,0.13,1.01
+common > 0.5 & common <= 0.89 & positive > 0.70 & subject to geographical variability > 0.70,rule,0.71,negative,0.0,0.58,0.34,0.31,1.0
+technically complicated <= 0.70 & common > 0.70 & negative > 0.5 & neutral <= 0.89 & subject to geographical variability > 0.70,rule,0.1,positive,0.0,0.13,0.56,0.33,1.0
+technically complicated > 0.5 & positive > 0.70 & subject to geographical variability > 0.70 & subject to time variability > 0.70,rule,0.63,negative,0.0,0.51,0.21,0.1,1.0
+common <= 0.89 & socially controversial <= 0.70 & negative <= 0.70 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.42,negative,0.0,0.35,0.16,0.07,1.0
+common > 0.5 & socially controversial <= 0.70 & negative <= 0.5 & subject to geographical variability > 0.70,rule,0.44,negative,0.0,0.37,0.13,0.08,1.0
+technically complicated > 0.5 & common <= 0.89 & positive > 0.70 & neutral <= 0.89 & subject to geographical variability > 0.70,rule,0.63,negative,0.0,0.5,0.15,0.09,1.0
+common > 0.70 & common <= 0.89 & positive > 0.70 & subject to geographical variability > 0.70,rule,0.5,negative,0.0,0.57,0.06,0.05,1.0
+common > 0.5 & positive > 0.5 & positive <= 0.70,rule,0.16,positive,0.0,0.2,0.08,0.06,1.0

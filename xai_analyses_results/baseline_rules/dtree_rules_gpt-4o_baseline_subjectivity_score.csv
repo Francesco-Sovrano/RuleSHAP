@@ -1,0 +1,33 @@
+,rule
+0,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated <= 0.500) and (interdisciplinary <= 0.500) and (unambiguous <= 0.700) then response: 0.407
+1,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated <= 0.500) and (interdisciplinary <= 0.500) and (unambiguous > 0.700) then response: 0.449
+2,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated <= 0.500) and (interdisciplinary > 0.500) and (subject to time variability <= 0.500) then response: 0.407
+3,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated <= 0.500) and (interdisciplinary > 0.500) and (subject to time variability > 0.500) then response: 0.427
+4,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated > 0.500) and (technically complicated <= 0.900) and (neutral <= 0.900) then response: 0.457
+5,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated > 0.500) and (technically complicated <= 0.900) and (neutral > 0.900) then response: 0.384
+6,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated > 0.500) and (technically complicated > 0.900) and (interdisciplinary <= 0.700) then response: 0.619
+7,If (subject to geographical variability <= 0.700) and (negative <= 0.300) and (technically complicated > 0.500) and (technically complicated > 0.900) and (interdisciplinary > 0.700) then response: 0.521
+8,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability <= 0.700) and (interdisciplinary <= 0.500) and (unambiguous <= 0.500) then response: 0.426
+9,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability <= 0.700) and (interdisciplinary <= 0.500) and (unambiguous > 0.500) then response: 0.485
+10,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability <= 0.700) and (interdisciplinary > 0.500) and (positive <= 0.300) then response: 0.522
+11,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability <= 0.700) and (interdisciplinary > 0.500) and (positive > 0.300) then response: 0.448
+12,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability > 0.700) and (negative <= 0.700) and (negative <= 0.500) then response: 0.492
+13,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability > 0.700) and (negative <= 0.700) and (negative > 0.500) then response: 0.460
+14,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability > 0.700) and (negative > 0.700) and (common <= 0.700) then response: 0.605
+15,If (subject to geographical variability <= 0.700) and (negative > 0.300) and (subject to time variability > 0.700) and (negative > 0.700) and (common > 0.700) then response: 0.538
+16,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary <= 0.700) and (conceptually dense <= 0.700) and (technically complicated <= 0.500) then response: 0.435
+17,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary <= 0.700) and (conceptually dense <= 0.700) and (technically complicated > 0.500) then response: 0.461
+18,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary <= 0.700) and (conceptually dense > 0.700) and (technically complicated <= 0.500) then response: 0.418
+19,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary <= 0.700) and (conceptually dense > 0.700) and (technically complicated > 0.500) then response: 0.396
+20,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary > 0.700) and (socially controversial <= 0.700) and (technically complicated <= 0.500) then response: 0.393
+21,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary > 0.700) and (socially controversial <= 0.700) and (technically complicated > 0.500) then response: 0.406
+22,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary > 0.700) and (socially controversial > 0.700) and (technically complicated <= 0.500) then response: 0.436
+23,If (subject to geographical variability > 0.700) and (technically complicated <= 0.700) and (interdisciplinary > 0.700) and (socially controversial > 0.700) and (technically complicated > 0.500) then response: 0.410
+24,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive <= 0.700) and (socially controversial <= 0.700) and (socially controversial <= 0.500) then response: 0.445
+25,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive <= 0.700) and (socially controversial <= 0.700) and (socially controversial > 0.500) then response: 0.430
+26,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive <= 0.700) and (socially controversial > 0.700) and (common <= 0.500) then response: 0.457
+27,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive <= 0.700) and (socially controversial > 0.700) and (common > 0.500) then response: 0.409
+28,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive > 0.700) and (common <= 0.700) and (interdisciplinary <= 0.500) then response: 0.279
+29,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive > 0.700) and (common <= 0.700) and (interdisciplinary > 0.500) then response: 0.445
+30,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive > 0.700) and (common > 0.700) and (socially controversial <= 0.500) then response: 0.497
+31,If (subject to geographical variability > 0.700) and (technically complicated > 0.700) and (positive > 0.700) and (common > 0.700) and (socially controversial > 0.500) then response: 0.454

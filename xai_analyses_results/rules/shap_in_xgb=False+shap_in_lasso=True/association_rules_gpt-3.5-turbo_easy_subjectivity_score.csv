@@ -1,0 +1,7 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+technically complicated > 0.5 & common > 0.70 & common <= 0.89 & positive > 0.5 & negative <= 0.70,rule,0.54,negative,0.03,0.44,3.65,1.47,1.03
+technically complicated > 0.70 & common <= 0.89 & positive > 0.5 & subject to time variability <= 0.89,rule,0.41,negative,0.03,0.33,1.2,0.44,1.03
+technically complicated > 0.5 & technically complicated <= 0.70 & common > 0.70 & socially controversial > 0.5 & negative <= 0.70,rule,0.16,negative,0.0,0.21,4.64,1.62,1.0
+technically complicated <= 0.70 & common > 0.5 & common <= 0.70 & subject to time variability <= 0.89,rule,0.13,positive,0.0,0.4,0.67,0.21,1.0
+technically complicated > 0.70 & common <= 0.89 & positive > 0.5 & neutral > 0.70 & subject to time variability <= 0.89,rule,0.36,negative,0.0,0.3,0.5,0.16,1.0
+technically complicated > 0.70 & common <= 0.70 & negative > 0.30 & subject to geographical variability > 0.70,rule,0.16,negative,0.0,0.23,0.24,0.07,1.0

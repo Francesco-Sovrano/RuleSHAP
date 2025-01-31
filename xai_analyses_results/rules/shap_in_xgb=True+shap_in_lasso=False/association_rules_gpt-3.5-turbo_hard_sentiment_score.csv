@@ -1,0 +1,2 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+conceptually dense > 0.70 & socially controversial > 0.5 & negative <= 0.5 & interdisciplinary > 0.70,rule,0.37,positive,0.0,0.43,0.68,0.38,1.0

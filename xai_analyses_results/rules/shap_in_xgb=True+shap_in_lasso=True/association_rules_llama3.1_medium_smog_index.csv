@@ -1,0 +1,11 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.30 & common <= 0.5 & positive > 0.5,rule,0.05,positive,12.65,0.05,6085.45,5438.49,117.4
+conceptually dense <= 0.89 & common <= 0.5 & positive > 0.5,rule,0.05,positive,2.09,0.05,88619.1,60297.31,34.02
+common <= 0.5 & positive > 0.5 & positive <= 0.70,rule,0.01,positive,0.71,0.1,6193.59,5395.05,14.68
+conceptually dense > 0.5 & common <= 0.5 & positive > 0.5,rule,0.04,positive,0.47,0.04,81691.77,57339.56,16.07
+common > 0.30 & common <= 0.5 & socially controversial > 0.70 & positive > 0.5,rule,0.02,positive,0.41,0.03,7102.27,5299.92,12.1
+technically complicated > 0.5 & common <= 0.5 & positive > 0.5,rule,0.04,positive,0.35,0.52,13214.94,12629.22,12.72
+common <= 0.5 & positive > 0.5 & negative > 0.70,rule,0.02,positive,0.27,0.04,44276.6,25140.3,12.83
+common <= 0.5 & socially controversial > 0.5,rule,0.05,positive,0.21,0.05,950.7,936.08,8.25
+common <= 0.5 & socially controversial > 0.70 & positive > 0.5 & subject to time variability <= 0.89,rule,0.02,positive,0.14,0.03,11645.34,8448.2,10.27
+common <= 0.5 & positive <= 0.5,rule,0.02,negative,0.0,0.16,1284.2,1157.3,7.08

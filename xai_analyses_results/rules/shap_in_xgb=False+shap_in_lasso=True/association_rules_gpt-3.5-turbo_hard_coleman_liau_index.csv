@@ -1,0 +1,15 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+interdisciplinary,linear,,negative,7.15,,,,
+common <= 0.89 & socially controversial > 0.5 & positive > 0.5 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.63,positive,0.57,0.51,101.02,47.54,6.07
+technically complicated <= 0.70 & common > 0.70 & socially controversial <= 0.89 & positive <= 0.89 & interdisciplinary > 0.70,rule,0.33,negative,0.38,0.27,130.18,40.83,5.11
+unambiguous > 0.70 & positive > 0.70 & negative <= 0.5 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.46,negative,0.37,0.41,248.43,68.66,5.8
+common > 0.5 & positive > 0.70 & negative > 0.5 & subject to time variability <= 0.89,rule,0.14,positive,0.34,0.11,98.33,38.75,4.9
+common > 0.70 & socially controversial <= 0.5 & positive > 0.70 & positive <= 0.89 & interdisciplinary > 0.70,rule,0.16,negative,0.32,0.14,1467.19,670.09,8.58
+technically complicated <= 0.70 & socially controversial <= 0.70 & unambiguous > 0.70 & neutral > 0.70 & interdisciplinary > 0.70,rule,0.24,negative,0.31,0.2,155.24,33.78,4.62
+common > 0.70 & socially controversial <= 0.5 & positive > 0.70 & neutral <= 0.89 & interdisciplinary > 0.70,rule,0.16,negative,0.26,0.13,243.14,108.18,5.91
+technically complicated <= 0.70 & common <= 0.89 & unambiguous > 0.70 & negative <= 0.5 & interdisciplinary > 0.70,rule,0.27,negative,0.26,0.24,159.38,40.15,4.66
+technically complicated > 0.5 & socially controversial > 0.30 & positive > 0.5 & neutral <= 0.89 & interdisciplinary > 0.70,rule,0.78,positive,0.14,0.68,101.64,26.44,3.73
+technically complicated <= 0.70 & common > 0.70 & negative <= 0.70 & neutral > 0.70 & interdisciplinary > 0.70,rule,0.26,negative,0.12,0.22,172.36,45.57,4.28
+common > 0.70 & positive > 0.70 & negative <= 0.5 & neutral > 0.70 & interdisciplinary > 0.70,rule,0.38,negative,0.11,0.33,161.04,41.09,4.13
+common > 0.70 & socially controversial <= 0.5 & unambiguous > 0.70 & positive > 0.70 & positive <= 0.89,rule,0.2,negative,0.08,0.16,173.78,96.49,4.94
+common > 0.70 & unambiguous > 0.70 & positive <= 0.89 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.54,negative,0.08,0.44,79.3,22.15,3.35

@@ -1,0 +1,4 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.89,rule,0.01,positive,14.23,0.8,10019.85,10019.85,140.33
+conceptually dense <= 0.89 & common <= 0.89,rule,0.99,negative,0.73,0.8,4368.29,4360.67,14.53
+technically complicated <= 0.89 & common > 0.89,rule,0.0,positive,0.57,0.0,1981.05,1971.49,11.9

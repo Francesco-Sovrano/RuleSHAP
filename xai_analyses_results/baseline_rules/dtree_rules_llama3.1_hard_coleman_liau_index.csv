@@ -1,0 +1,32 @@
+,rule
+0,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary <= 0.500) and (interdisciplinary <= 0.300) then response: 21.650
+1,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary <= 0.500) and (interdisciplinary > 0.300) and (technically complicated <= 0.500) then response: 14.155
+2,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary <= 0.500) and (interdisciplinary > 0.300) and (technically complicated > 0.500) then response: 11.595
+3,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary > 0.500) and (positive <= 0.500) and (conceptually dense <= 0.900) then response: 23.419
+4,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary > 0.500) and (positive <= 0.500) and (conceptually dense > 0.900) then response: 18.974
+5,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary > 0.500) and (positive > 0.500) and (common <= 0.500) then response: 17.904
+6,If (interdisciplinary <= 0.700) and (positive <= 0.700) and (interdisciplinary > 0.500) and (positive > 0.500) and (common > 0.500) then response: 23.394
+7,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common <= 0.500) and (interdisciplinary <= 0.500) and (unambiguous <= 0.500) then response: 10.940
+8,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common <= 0.500) and (interdisciplinary <= 0.500) and (unambiguous > 0.500) then response: 15.150
+9,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common <= 0.500) and (interdisciplinary > 0.500) and (conceptually dense <= 0.700) then response: 15.473
+10,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common <= 0.500) and (interdisciplinary > 0.500) and (conceptually dense > 0.700) then response: 17.390
+11,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common > 0.500) and (interdisciplinary <= 0.500) and (unambiguous <= 0.500) then response: 16.710
+12,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common > 0.500) and (interdisciplinary <= 0.500) and (unambiguous > 0.500) then response: 13.918
+13,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common > 0.500) and (interdisciplinary > 0.500) and (negative <= 0.700) then response: 20.514
+14,If (interdisciplinary <= 0.700) and (positive > 0.700) and (common > 0.500) and (interdisciplinary > 0.500) and (negative > 0.700) then response: 17.676
+15,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive <= 0.700) and (conceptually dense <= 0.700) and (socially controversial <= 0.500) then response: 14.253
+16,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive <= 0.700) and (conceptually dense <= 0.700) and (socially controversial > 0.500) then response: 15.608
+17,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive <= 0.700) and (conceptually dense > 0.700) and (positive <= 0.300) then response: 18.182
+18,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive <= 0.700) and (conceptually dense > 0.700) and (positive > 0.300) then response: 16.217
+19,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive > 0.700) and (conceptually dense <= 0.500) and (negative <= 0.700) then response: 12.032
+20,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive > 0.700) and (conceptually dense <= 0.500) and (negative > 0.700) then response: 14.090
+21,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive > 0.700) and (conceptually dense > 0.500) and (negative <= 0.900) then response: 13.921
+22,If (interdisciplinary > 0.700) and (common <= 0.500) and (positive > 0.700) and (conceptually dense > 0.500) and (negative > 0.900) then response: 14.445
+23,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (socially controversial <= 0.500) and (technically complicated <= 0.500) then response: 15.770
+24,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (socially controversial <= 0.500) and (technically complicated > 0.500) then response: 16.450
+25,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (socially controversial > 0.500) and (positive <= 0.700) then response: 16.069
+26,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (socially controversial > 0.500) and (positive > 0.700) then response: 17.663
+27,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (positive <= 0.500) and (socially controversial <= 0.700) then response: 15.696
+28,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (positive <= 0.500) and (socially controversial > 0.700) then response: 17.374
+29,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (positive > 0.500) and (technically complicated <= 0.500) then response: 17.368
+30,If (interdisciplinary > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (positive > 0.500) and (technically complicated > 0.500) then response: 18.197

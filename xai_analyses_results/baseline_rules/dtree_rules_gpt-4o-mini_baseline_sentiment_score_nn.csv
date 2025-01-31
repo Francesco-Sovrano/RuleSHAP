@@ -1,0 +1,27 @@
+,rule
+0,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial <= 0.900) and (common <= 0.900) and (subject to geographical variability <= 0.900) then response: -0.056
+1,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial <= 0.900) and (common <= 0.900) and (subject to geographical variability > 0.900) then response: -0.025
+2,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial <= 0.900) and (common > 0.900) then response: 0.000
+3,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial > 0.900) and (technically complicated <= 0.700) and (subject to geographical variability <= 0.900) then response: -0.025
+4,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial > 0.900) and (technically complicated <= 0.700) and (subject to geographical variability > 0.900) then response: 0.000
+5,If (positive <= 0.500) and (unambiguous <= 0.700) and (socially controversial > 0.900) and (technically complicated > 0.700) then response: 0.000
+6,If (positive <= 0.500) and (unambiguous > 0.700) and (unambiguous <= 0.900) and (positive <= 0.300) and (common <= 0.900) then response: -0.150
+7,If (positive <= 0.500) and (unambiguous > 0.700) and (unambiguous <= 0.900) and (positive <= 0.300) and (common > 0.900) then response: -0.511
+8,If (positive <= 0.500) and (unambiguous > 0.700) and (unambiguous <= 0.900) and (positive > 0.300) and (subject to geographical variability <= 0.900) then response: -0.080
+9,If (positive <= 0.500) and (unambiguous > 0.700) and (unambiguous <= 0.900) and (positive > 0.300) and (subject to geographical variability > 0.900) then response: -0.041
+10,If (positive <= 0.500) and (unambiguous > 0.700) and (unambiguous > 0.900) then response: -0.444
+11,If (positive > 0.500) and (negative <= 0.500) and (unambiguous <= 0.700) and (common <= 0.900) then response: 0.000
+12,If (positive > 0.500) and (negative <= 0.500) and (unambiguous <= 0.700) and (common > 0.900) and (conceptually dense <= 0.700) then response: 0.065
+13,If (positive > 0.500) and (negative <= 0.500) and (unambiguous <= 0.700) and (common > 0.900) and (conceptually dense > 0.700) then response: 0.000
+14,If (positive > 0.500) and (negative <= 0.500) and (unambiguous > 0.700) and (socially controversial <= 0.300) and (subject to time variability <= 0.700) then response: 0.175
+15,If (positive > 0.500) and (negative <= 0.500) and (unambiguous > 0.700) and (socially controversial <= 0.300) and (subject to time variability > 0.700) then response: 0.000
+16,If (positive > 0.500) and (negative <= 0.500) and (unambiguous > 0.700) and (socially controversial > 0.300) and (neutral <= 0.700) then response: 0.034
+17,If (positive > 0.500) and (negative <= 0.500) and (unambiguous > 0.700) and (socially controversial > 0.300) and (neutral > 0.700) then response: 0.016
+18,If (positive > 0.500) and (negative > 0.500) and (positive <= 0.700) and (technically complicated <= 0.500) and (unambiguous <= 0.700) then response: 0.000
+19,If (positive > 0.500) and (negative > 0.500) and (positive <= 0.700) and (technically complicated <= 0.500) and (unambiguous > 0.700) then response: -0.111
+20,If (positive > 0.500) and (negative > 0.500) and (positive <= 0.700) and (technically complicated > 0.500) and (unambiguous <= 0.700) then response: -0.006
+21,If (positive > 0.500) and (negative > 0.500) and (positive <= 0.700) and (technically complicated > 0.500) and (unambiguous > 0.700) then response: 0.001
+22,If (positive > 0.500) and (negative > 0.500) and (positive > 0.700) and (unambiguous <= 0.700) and (technically complicated <= 0.700) then response: -0.000
+23,If (positive > 0.500) and (negative > 0.500) and (positive > 0.700) and (unambiguous <= 0.700) and (technically complicated > 0.700) then response: 0.002
+24,If (positive > 0.500) and (negative > 0.500) and (positive > 0.700) and (unambiguous > 0.700) and (socially controversial <= 0.900) then response: 0.003
+25,If (positive > 0.500) and (negative > 0.500) and (positive > 0.700) and (unambiguous > 0.700) and (socially controversial > 0.900) then response: 0.052

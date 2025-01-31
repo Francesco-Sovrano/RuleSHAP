@@ -1,0 +1,15 @@
+,rule
+0,If (common <= 0.500) and (positive <= 0.500) then response: 0.000
+1,If (common <= 0.500) and (positive > 0.500) and (conceptually dense <= 0.700) and (socially controversial <= 0.300) and (interdisciplinary <= 0.500) then response: 14.900
+2,If (common <= 0.500) and (positive > 0.500) and (conceptually dense <= 0.700) and (socially controversial <= 0.300) and (interdisciplinary > 0.500) then response: 15.964
+3,If (common <= 0.500) and (positive > 0.500) and (conceptually dense <= 0.700) and (socially controversial > 0.300) and (negative <= 0.500) then response: 16.314
+4,If (common <= 0.500) and (positive > 0.500) and (conceptually dense <= 0.700) and (socially controversial > 0.300) and (negative > 0.500) then response: 16.671
+5,If (common <= 0.500) and (positive > 0.500) and (conceptually dense > 0.700) and (unambiguous <= 0.500) and (negative <= 0.500) then response: 17.205
+6,If (common <= 0.500) and (positive > 0.500) and (conceptually dense > 0.700) and (unambiguous <= 0.500) and (negative > 0.500) then response: 17.678
+7,If (common <= 0.500) and (positive > 0.500) and (conceptually dense > 0.700) and (unambiguous > 0.500) and (technically complicated <= 0.500) then response: 16.309
+8,If (common <= 0.500) and (positive > 0.500) and (conceptually dense > 0.700) and (unambiguous > 0.500) and (technically complicated > 0.500) then response: 16.767
+9,If (common > 0.500) and (technically complicated <= 0.500) and (positive <= 0.700) and (subject to time variability <= 0.700) and (socially controversial <= 0.700) then response: 0.000
+10,If (common > 0.500) and (technically complicated <= 0.500) and (positive <= 0.700) and (subject to time variability <= 0.700) and (socially controversial > 0.700) then response: 0.677
+11,If (common > 0.500) and (technically complicated <= 0.500) and (positive <= 0.700) and (subject to time variability > 0.700) then response: 0.000
+12,If (common > 0.500) and (technically complicated <= 0.500) and (positive > 0.700) then response: 0.000
+13,If (common > 0.500) and (technically complicated > 0.500) then response: 0.000

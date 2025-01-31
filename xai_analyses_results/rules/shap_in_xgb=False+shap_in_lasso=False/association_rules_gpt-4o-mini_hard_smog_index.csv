@@ -1,0 +1,17 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+technically complicated > 0.70 & common <= 0.5,rule,0.0,positive,7.05,0.0,603.24,581.68,51.25
+technically complicated <= 0.70 & common <= 0.5 & negative <= 0.70,rule,0.0,positive,6.88,0.0,43.21,23.29,24.8
+common <= 0.5 & negative <= 0.70,rule,0.0,positive,5.25,0.0,4514.7,4228.05,52.15
+common <= 0.5 & positive > 0.70,rule,0.0,positive,2.28,0.0,3808.95,3703.99,26.98
+common > 0.5,rule,1.0,negative,2.02,0.8,4228.05,4228.05,25.18
+technically complicated > 0.70 & common <= 0.5 & neutral <= 0.70,rule,0.0,positive,1.13,0.0,50.47,40.45,7.88
+conceptually dense > 0.70 & technically complicated <= 0.70 & common <= 0.5,rule,0.0,negative,1.12,0.0,659.72,581.68,13.52
+technically complicated > 0.5 & common <= 0.5 & positive > 0.70,rule,0.0,positive,0.7,0.0,91.74,64.84,7.09
+common <= 0.5 & negative <= 0.70 & neutral <= 0.70,rule,0.0,positive,0.63,0.0,91.95,52.72,6.47
+technically complicated > 0.5 & common <= 0.5 & negative <= 0.70,rule,0.0,positive,0.45,0.0,212.4,207.92,7.72
+common <= 0.5 & positive > 0.70 & neutral <= 0.70,rule,0.0,positive,0.38,0.0,79.09,60.04,5.65
+positive,linear,,positive,0.02,,,,
+unambiguous <= 0.5 & neutral > 0.5,rule,0.0,positive,0.02,0.0,6.06,3.3,1.22
+negative,linear,,positive,0.01,,,,
+conceptually dense,linear,,negative,0.0,,,,
+common > 0.5 & neutral > 0.5,rule,0.99,negative,0.0,0.8,6.15,4.8,1.57

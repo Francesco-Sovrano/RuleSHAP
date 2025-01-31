@@ -1,0 +1,59 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+interdisciplinary,linear,,positive,3.25,,,,
+common <= 0.89 & unambiguous <= 0.70 & positive > 0.70 & positive <= 0.89 & subject to geographical variability > 0.70,rule,0.42,positive,0.48,0.35,3250.62,986.34,10.22
+conceptually dense > 0.70 & common <= 0.89 & positive > 0.30 & negative > 0.5 & subject to geographical variability > 0.70,rule,0.37,positive,0.46,0.3,845.34,284.87,8.23
+common <= 0.89 & neutral > 0.70 & subject to geographical variability <= 0.70 & interdisciplinary <= 0.70,rule,0.05,positive,0.46,0.04,391.26,305.75,8.37
+conceptually dense > 0.5 & technically complicated <= 0.5 & common <= 0.89 & subject to geographical variability <= 0.89 & interdisciplinary > 0.5,rule,0.18,positive,0.43,0.15,3179.0,1567.19,10.5
+common <= 0.89 & subject to geographical variability > 0.70 & subject to geographical variability <= 0.89,rule,0.79,positive,0.42,0.64,1227.7,524.84,8.89
+technically complicated > 0.5 & common <= 0.89 & positive > 0.5 & neutral > 0.5 & subject to time variability > 0.70,rule,0.33,positive,0.4,0.27,562.8,309.59,8.06
+common <= 0.89 & socially controversial <= 0.5 & positive > 0.5 & neutral > 0.5 & interdisciplinary > 0.5,rule,0.3,positive,0.37,0.57,707.63,310.45,7.87
+positive > 0.5 & neutral > 0.5 & subject to geographical variability > 0.70 & subject to geographical variability <= 0.89 & subject to time variability > 0.5,rule,0.6,positive,0.33,0.53,4981.22,1964.72,10.12
+technically complicated > 0.5 & unambiguous <= 0.5 & interdisciplinary > 0.70 & subject to time variability > 0.5,rule,0.2,positive,0.32,0.48,5223.95,5021.44,11.23
+common <= 0.89 & socially controversial <= 0.5 & negative <= 0.5 & neutral > 0.5 & subject to geographical variability <= 0.70,rule,0.11,positive,0.29,0.09,402.84,122.92,6.19
+conceptually dense > 0.5 & common <= 0.89 & unambiguous <= 0.70 & negative <= 0.5 & interdisciplinary > 0.70,rule,0.31,positive,0.27,0.34,974.96,332.85,7.35
+socially controversial <= 0.70 & unambiguous > 0.5 & positive <= 0.5 & interdisciplinary > 0.70 & subject to time variability > 0.5,rule,0.03,negative,0.25,0.05,1601.89,667.99,8.12
+conceptually dense > 0.70 & technically complicated > 0.5 & technically complicated <= 0.70 & negative <= 0.5 & subject to geographical variability <= 0.89,rule,0.12,positive,0.25,0.17,1665.0,690.69,8.17
+socially controversial > 0.5 & unambiguous > 0.5 & negative <= 0.5 & subject to geographical variability > 0.70,rule,0.16,positive,0.25,0.16,689.67,422.86,7.53
+conceptually dense > 0.70 & technically complicated > 0.5 & common <= 0.89 & unambiguous <= 0.70 & subject to geographical variability > 0.70,rule,0.53,positive,0.24,0.53,1683.54,512.08,7.75
+conceptually dense > 0.70 & technically complicated > 0.5 & common <= 0.70 & socially controversial > 0.5 & unambiguous <= 0.70,rule,0.3,positive,0.24,0.24,257.34,108.17,5.8
+technically complicated > 0.5 & technically complicated <= 0.89 & common <= 0.89 & socially controversial <= 0.70 & negative <= 0.70,rule,0.41,positive,0.23,0.45,658.4,232.73,6.68
+common <= 0.89 & socially controversial > 0.70 & positive > 0.30 & positive <= 0.70 & subject to time variability <= 0.89,rule,0.25,positive,0.22,0.2,70.09,25.08,3.94
+conceptually dense > 0.5 & common <= 0.89 & positive > 0.5 & negative <= 0.70 & subject to time variability <= 0.70,rule,0.29,positive,0.22,0.23,685.43,228.84,6.62
+common <= 0.89 & socially controversial <= 0.70 & positive > 0.70 & subject to time variability <= 0.89,rule,0.5,positive,0.2,0.48,200.73,104.25,5.59
+conceptually dense > 0.70 & common <= 0.89,rule,0.64,positive,0.17,0.78,729.78,381.07,6.97
+conceptually dense > 0.5 & common <= 0.70 & socially controversial <= 0.89 & positive > 0.70,rule,0.32,positive,0.17,0.44,427.96,215.19,6.28
+positive,linear,,positive,0.17,,,,
+common > 0.5 & socially controversial <= 0.70 & unambiguous > 0.5 & positive <= 0.70 & neutral <= 0.70,rule,0.08,negative,0.16,0.07,508.22,289.59,6.6
+socially controversial > 0.5 & positive > 0.30 & negative > 0.5 & interdisciplinary > 0.5 & subject to time variability > 0.70,rule,0.38,positive,0.14,0.31,983.71,387.66,6.8
+common <= 0.89 & socially controversial > 0.30 & unambiguous <= 0.70 & negative > 0.30 & negative <= 0.5,rule,0.4,positive,0.14,0.34,1276.86,547.0,7.21
+common <= 0.70 & socially controversial <= 0.89 & unambiguous <= 0.70 & subject to time variability > 0.70,rule,0.35,positive,0.13,0.28,149.57,85.1,5.01
+conceptually dense > 0.70 & technically complicated > 0.5,rule,0.57,positive,0.12,0.52,812.35,665.78,7.28
+technically complicated <= 0.89 & common <= 0.89 & unambiguous <= 0.70 & neutral <= 0.5 & interdisciplinary > 0.70,rule,0.14,positive,0.11,0.54,236.59,135.69,5.46
+common <= 0.70 & unambiguous <= 0.70 & negative <= 0.5 & neutral > 0.5,rule,0.29,positive,0.11,0.37,818.1,251.79,6.15
+conceptually dense > 0.5 & common <= 0.89 & positive <= 0.89 & negative <= 0.5 & subject to geographical variability > 0.70,rule,0.36,positive,0.11,0.3,888.37,284.87,6.26
+conceptually dense > 0.70 & subject to time variability > 0.5,rule,0.64,positive,0.11,0.51,517.89,378.27,6.59
+conceptually dense > 0.5 & negative <= 0.70 & subject to geographical variability > 0.70 & subject to time variability > 0.5 & subject to time variability <= 0.70,rule,0.22,positive,0.1,0.18,4438.76,1139.02,7.75
+conceptually dense > 0.70 & positive > 0.70 & subject to geographical variability <= 0.89 & subject to time variability > 0.70,rule,0.2,positive,0.1,0.17,404.44,233.31,5.98
+technically complicated > 0.5 & common <= 0.5 & socially controversial <= 0.89,rule,0.06,positive,0.09,0.06,175.12,109.46,5.12
+technically complicated > 0.5 & common <= 0.89 & unambiguous <= 0.70 & positive > 0.5 & negative > 0.5,rule,0.26,positive,0.08,0.31,1108.07,322.43,6.23
+conceptually dense > 0.70 & technically complicated > 0.5 & technically complicated <= 0.89 & common <= 0.70 & negative <= 0.5,rule,0.17,positive,0.07,0.31,1733.61,683.33,7.01
+conceptually dense > 0.70 & technically complicated > 0.5 & common <= 0.89 & interdisciplinary > 0.70,rule,0.52,positive,0.07,0.49,3546.64,2539.45,8.35
+common <= 0.89 & unambiguous > 0.5 & positive > 0.30 & positive <= 0.5 & neutral > 0.5,rule,0.04,negative,0.06,0.05,1151.99,428.52,6.42
+technically complicated > 0.5 & technically complicated <= 0.89 & common <= 0.70 & subject to time variability > 0.70,rule,0.31,positive,0.05,0.25,183.99,71.52,4.49
+technically complicated <= 0.89 & common <= 0.89 & socially controversial <= 0.89 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.63,positive,0.05,0.54,434.89,203.56,5.6
+unambiguous <= 0.5 & positive <= 0.70,rule,0.22,positive,0.05,0.32,651.72,431.06,6.38
+conceptually dense > 0.70 & technically complicated > 0.5 & unambiguous <= 0.70 & positive > 0.70 & subject to geographical variability <= 0.89,rule,0.25,positive,0.05,0.42,4894.23,2044.22,8.0
+technically complicated <= 0.70 & common <= 0.89 & positive > 0.70 & neutral > 0.5 & subject to time variability <= 0.70,rule,0.28,positive,0.04,0.23,227.69,67.49,4.4
+common > 0.30 & common <= 0.89 & unambiguous > 0.5 & negative <= 0.5 & subject to time variability <= 0.70,rule,0.29,positive,0.04,0.25,362.45,203.23,5.54
+conceptually dense > 0.70 & common > 0.5 & neutral > 0.5 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.36,negative,0.03,0.4,452.82,195.77,5.43
+technically complicated > 0.5 & common > 0.5 & common <= 0.70 & positive > 0.70 & negative <= 0.70,rule,0.22,positive,0.03,0.26,619.23,170.12,5.29
+technically complicated > 0.5 & unambiguous <= 0.70 & positive > 0.70 & interdisciplinary > 0.70 & subject to time variability > 0.70,rule,0.2,positive,0.02,0.16,3517.0,1416.86,7.39
+technically complicated > 0.5 & unambiguous > 0.5 & unambiguous <= 0.70 & positive > 0.70 & negative <= 0.70,rule,0.31,positive,0.02,0.32,353.96,178.64,5.3
+common > 0.89,rule,0.02,negative,0.02,0.8,1428.81,1428.81,7.4
+technically complicated <= 0.70 & positive > 0.5 & negative > 0.30 & negative <= 0.70 & interdisciplinary <= 0.70,rule,0.2,negative,0.01,0.16,3509.6,2442.66,7.88
+conceptually dense > 0.70 & technically complicated <= 0.89 & socially controversial <= 0.89 & unambiguous <= 0.70 & interdisciplinary > 0.5,rule,0.61,positive,0.01,0.49,441.07,243.46,5.55
+technically complicated > 0.5 & common <= 0.70 & socially controversial > 0.5 & socially controversial <= 0.70 & unambiguous <= 0.70,rule,0.17,positive,0.01,0.14,268.46,95.23,4.6
+common <= 0.89 & socially controversial <= 0.70 & negative <= 0.70 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.35,positive,0.01,0.32,1871.78,871.96,6.87
+common <= 0.89 & positive > 0.70 & positive <= 0.89 & neutral <= 0.70 & interdisciplinary > 0.70,rule,0.24,positive,0.01,0.3,2781.06,1357.14,7.26
+technically complicated > 0.70 & common > 0.5 & interdisciplinary > 0.70 & interdisciplinary <= 0.89,rule,0.14,negative,0.0,0.45,396.61,194.3,5.28
+conceptually dense <= 0.5 & technically complicated <= 0.70 & interdisciplinary <= 0.70 & subject to time variability > 0.5 & subject to time variability <= 0.70,rule,0.04,negative,0.0,0.05,1268.21,1034.73,6.96

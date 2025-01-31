@@ -1,0 +1,16 @@
+,rule
+0,If (common <= 0.500) and (positive <= 0.500) then response: 0.000
+1,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary <= 0.700) and (interdisciplinary <= 0.500) and (unambiguous <= 0.500) then response: 12.900
+2,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary <= 0.700) and (interdisciplinary <= 0.500) and (unambiguous > 0.500) then response: 14.950
+3,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary <= 0.700) and (interdisciplinary > 0.500) and (positive <= 0.700) then response: 21.887
+4,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary <= 0.700) and (interdisciplinary > 0.500) and (positive > 0.700) then response: 20.156
+5,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary > 0.700) and (socially controversial <= 0.700) and (positive <= 0.700) then response: 16.807
+6,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary > 0.700) and (socially controversial <= 0.700) and (positive > 0.700) then response: 15.668
+7,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary > 0.700) and (socially controversial > 0.700) and (positive <= 0.700) then response: 17.553
+8,If (common <= 0.500) and (positive > 0.500) and (interdisciplinary > 0.700) and (socially controversial > 0.700) and (positive > 0.700) then response: 16.525
+9,If (common > 0.500) and (conceptually dense <= 0.900) and (interdisciplinary <= 0.700) and (technically complicated <= 0.500) then response: 0.000
+10,If (common > 0.500) and (conceptually dense <= 0.900) and (interdisciplinary <= 0.700) and (technically complicated > 0.500) and (conceptually dense <= 0.500) then response: 0.641
+11,If (common > 0.500) and (conceptually dense <= 0.900) and (interdisciplinary <= 0.700) and (technically complicated > 0.500) and (conceptually dense > 0.500) then response: 0.000
+12,If (common > 0.500) and (conceptually dense <= 0.900) and (interdisciplinary > 0.700) then response: 0.000
+13,If (common > 0.500) and (conceptually dense > 0.900) and (negative <= 0.700) then response: 22.600
+14,If (common > 0.500) and (conceptually dense > 0.900) and (negative > 0.700) then response: 0.000
