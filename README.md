@@ -54,6 +54,42 @@ Run the provided setup script:
  ```
 If you encounter any issues with package dependencies, ensure you’re using a clean Python 3.9 environment (e.g., via `conda` or `venv`).
 
+To install Llama 3.1 using Ollama, follow these steps:
+
+1. **Download and Install Ollama**
+
+   - **For macOS and Windows:**
+     - Visit the [Ollama website](https://ollama.com/download) and download the installer suitable for your operating system.
+     - Run the installer and follow the on-screen instructions to complete the installation.
+
+   - **For Linux:**
+     - Open your terminal and execute the following command:
+       ```bash
+       curl -fsSL https://ollama.com/install.sh | sh
+       ```
+     - This command will download and install Ollama on your system.
+
+2. **Install the Llama 3.1 Model**
+
+   - Open your terminal (or Command Prompt on Windows).
+   - Run the following command to download and set up the Llama 3.1 model:
+     ```bash
+     ollama run llama3.1
+     ```
+   - The initial execution will download the model, which may take some time depending on your internet speed. Subsequent runs will utilize the locally stored model.
+
+3. **Verify the Installation**
+
+   - To ensure that Llama 3.1 is installed correctly, you can run a simple test:
+     ```bash
+     ollama run llama3.1 "Hello, Llama!"
+     ```
+   - If the installation is successful, the model will generate a response to the input prompt.
+
+**Note:** Ensure your system meets the necessary hardware requirements for running Llama 3.1. For instance, the 8B model typically requires at least 32 GB of RAM and 8 GB of VRAM for optimal performance. ([github.com](https://github.com/kamalraj0611/llama-3-local-setup?utm_source=chatgpt.com))
+
+For more detailed information and troubleshooting, refer to the [Ollama GitHub repository](https://github.com/ollama/ollama). 
+
 ---
 
 ## Usage
