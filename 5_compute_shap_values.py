@@ -21,7 +21,7 @@ from scipy.stats import pearsonr, spearmanr
 import shap
 from ruleshap import rand_int
 
-from doxpy.misc.doc_reader import create_cache, load_cache
+from lib import create_cache, load_cache
 
 ################################################################
 

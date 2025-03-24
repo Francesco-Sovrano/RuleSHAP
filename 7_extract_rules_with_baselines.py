@@ -16,7 +16,7 @@ from rulefit import RuleFit
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor, _tree
 
-from doxpy.misc.doc_reader import create_cache, load_cache
+from lib import create_cache, load_cache
 
 ################################################################
 
