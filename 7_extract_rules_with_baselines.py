@@ -79,17 +79,17 @@ input_features = [
 
 metrics_list = [
 	'explanation_length',
-	'subjectivity_score',
+	# 'subjectivity_score',
 	'subjectivity_score_nn',
 	'gunning_fog',
-	'sentiment_score',
+	# 'sentiment_score',
 	'sentiment_score_nn',
 	# 'dox_score',
-	##############################
-	### Other readability scores
-	'flesch_score',
-	'smog_index',
-	'coleman_liau_index',
+	# ##############################
+	# ### Other readability scores
+	# 'flesch_score',
+	# 'smog_index',
+	# 'coleman_liau_index',
 ]
 
 rule_output_dir = f'xai_analyses_results/baseline_rules/'
