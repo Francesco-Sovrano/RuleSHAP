@@ -34,26 +34,26 @@ input_space_dimension_dict = {
 	'common': "common (appearing frequently or widely understood)",
 	'socially controversial': "socially controversial (sparking debate or having divided opinions)",
 	'unambiguous': "unambiguous (being straightforward or universally understood)",
-	'open to interpretation': "open to interpretation (inviting diverse viewpoints)",
+	# 'open to interpretation': "open to interpretation (inviting diverse viewpoints)",
 	'positive': "positive in tone (associated with favorable or optimistic language)",
 	'negative': "negative in tone (presented with criticism or unfavorable language)",
 	'neutral': "neutral (without strong emotional or judgmental language)",
 	'subject to geographical variability': "subject to geographical variability (changing in interpretation or relevance across regions)",
 	'interdisciplinary': "interdisciplinary (spanning multiple fields or domains)",
 	'subject to time variability': "subject to time variability (changing in relevance or interpretation over time)",
-	##############################################
-	# Additional score types focusing on framing effects, anchoring, and biases
-	'emotionally charged': "emotionally charged (evoking strong emotions that influence perception)",
-	'politically influenced': "politically influenced (framed through ideological lenses)",
-	'culturally sensitive': "culturally sensitive (impacted by norms, values, or sensitivities)",
-	'confirmation bias-driven': "confirmation bias-driven (reinforcing pre-existing beliefs)",
-	'persuasive or manipulative': "persuasive or manipulative (designed to influence opinions through emotive language)",
-	'recency bias-driven': "recency bias-driven (focused on recent events and potentially overlooking historical context)",
-	'simplified for broad appeal': "simplified for broad appeal (potentially sacrificing depth or nuance)",
-	'narrative-driven': "narrative-driven (framed as part of a larger story that influences perception)",
-	'subject to stereotyping': "subject to stereotyping (relying on generalized views or biases)",
-	'reliant on heuristics or general rules': "reliant on heuristics or general rules (potentially leading to simplifications or anchoring biases)",
-	#'-common+positive': "`uncommon (not appearing frequently and not widely understood) but positive in tone (associated with favorable or optimistic language)`",
+	# ##############################################
+	# # Additional score types focusing on framing effects, anchoring, and biases
+	# 'emotionally charged': "emotionally charged (evoking strong emotions that influence perception)",
+	# 'politically influenced': "politically influenced (framed through ideological lenses)",
+	# 'culturally sensitive': "culturally sensitive (impacted by norms, values, or sensitivities)",
+	# 'confirmation bias-driven': "confirmation bias-driven (reinforcing pre-existing beliefs)",
+	# 'persuasive or manipulative': "persuasive or manipulative (designed to influence opinions through emotive language)",
+	# 'recency bias-driven': "recency bias-driven (focused on recent events and potentially overlooking historical context)",
+	# 'simplified for broad appeal': "simplified for broad appeal (potentially sacrificing depth or nuance)",
+	# 'narrative-driven': "narrative-driven (framed as part of a larger story that influences perception)",
+	# 'subject to stereotyping': "subject to stereotyping (relying on generalized views or biases)",
+	# 'reliant on heuristics or general rules': "reliant on heuristics or general rules (potentially leading to simplifications or anchoring biases)",
+	# #'-common+positive': "`uncommon (not appearing frequently and not widely understood) but positive in tone (associated with favorable or optimistic language)`",
 }
 
 
