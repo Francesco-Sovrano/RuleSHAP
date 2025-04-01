@@ -50,11 +50,26 @@ def get_cached_values(value_list, cache, fetch_fn, cache_name=None, key_fn=lambd
 
 _loaded_caches = {}
 def instruct_model(prompts, model='llama3.1', api_key=None, **kwargs):
-	if model.startswith('gpt'):
-		return instruct_gpt_model(prompts, api_key=api_key, model=model, **kwargs)
-	return instruct_ollama_model(prompts, model=model, **kwargs)
+	if model.startswith('gpt') or model.startswith('o1') or model.startswith('o3'):
+		api_key = os.getenv('OPENAI_API_KEY', '')
+		base_url = "https://api.openai.com/v1"
+		parallelise = True
+	elif model in ['deepseek-r1-distill-qwen-32b','llama-3.3-70b-versatile','mixtral-8x7b-32768','llama-3.1-8b-instant','llama-3.3-70b-versatile']:
+		api_key = os.getenv('GROQ_API_KEY', '')
+		base_url = "https://api.groq.com/openai/v1"
+		parallelise = True
+	elif model in ['llama3.1','llama3.1:70b']:
+		return instruct_ollama_model(prompts, model=model, **kwargs)
+	else:
+		api_key ='ollama' # required, but unused
+		base_url = 'http://localhost:11434/v1'
+		parallelise = False
+	return instruct_gpt_model(prompts, api_key=api_key, model=model, base_url=base_url, parallelise=parallelise, **kwargs)
+	# if model.startswith('gpt'):
+	# 	return instruct_gpt_model(prompts, api_key=api_key, model=model, **kwargs)
+	# return instruct_ollama_model(prompts, model=model, **kwargs)
 			
-def instruct_ollama_model(prompts, system_instruction='', model='llama3.1', options=None, temperature=0.5, top_p=1, output_to_input_proportion=2, non_influential_prompt_size=0, cache_path='cache/', **args):
+def instruct_ollama_model(prompts, system_instruction='', model='llama3.1', parallelise=False, options=None, temperature=0.5, top_p=1, output_to_input_proportion=2, non_influential_prompt_size=0, cache_path='cache/', **args):
 	max_tokens = 4096
 	if options is None:
 		# For Mistral: https://www.reddit.com/r/LocalLLaMA/comments/16v820a/mistral_7b_temperature_settings/
@@ -93,7 +108,7 @@ def instruct_ollama_model(prompts, system_instruction='', model='llama3.1', opti
 		# return also the missing_prompt otherwise asynchronous prompting will shuffle the outputs
 		return missing_prompt, response['response']
 	def parallel_fetch_fn(missing_prompt_list):
-		n_processes = 1
+		n_processes = multiprocessing.cpu_count()*2 if parallelise else 1
 		with concurrent.futures.ThreadPoolExecutor(max_workers=max(1,n_processes)) as executor:
 			futures = [executor.submit(fetch_fn, prompt) for prompt in missing_prompt_list]
 			for future in tqdm(concurrent.futures.as_completed(futures), total=len(missing_prompt_list), desc="Sending prompts to Ollama"):
@@ -114,8 +129,8 @@ def instruct_ollama_model(prompts, system_instruction='', model='llama3.1', opti
 		cache_name=ollama_cache_name,
 	)
 
-def instruct_gpt_model(prompts, system_instruction='', api_key=None, model='gpt-4', n=1, temperature=0.5, top_p=1, frequency_penalty=0, presence_penalty=0, cache_path='cache/', **kwargs):
-	chatgpt_client = openai.OpenAI(api_key=api_key)
+def instruct_gpt_model(prompts, system_instruction='', api_key=None, base_url=None, model='gpt-4', parallelise=True, n=1, temperature=0.5, top_p=1, frequency_penalty=0, presence_penalty=0, cache_path='cache/', **kwargs):
+	chatgpt_client = openai.OpenAI(api_key=api_key, base_url=base_url)
 	max_tokens = None
 	adjust_max_tokens = True
 	if '32k' in model:
@@ -170,7 +185,7 @@ def instruct_gpt_model(prompts, system_instruction='', api_key=None, model='gpt-
 			print(f'OpenAI returned this error: {e}')
 			return missing_prompt, None
 	def parallel_fetch_fn(missing_prompt_list):
-		n_processes = multiprocessing.cpu_count()*2
+		n_processes = multiprocessing.cpu_count()*2 if parallelise else 1
 		# Using ThreadPoolExecutor to run queries in parallel with tqdm for progress tracking
 		with concurrent.futures.ThreadPoolExecutor(max_workers=max(1,n_processes)) as executor:
 			futures = [executor.submit(fetch_fn, prompt) for prompt in missing_prompt_list]

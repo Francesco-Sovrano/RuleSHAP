@@ -1,0 +1,7 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.89,rule,0.01,positive,2.18,0.8,162.2,162.2,16.18
+common <= 0.89 & positive > 0.70,rule,0.74,negative,0.02,0.8,94.11,93.75,4.63
+common <= 0.89 & unambiguous > 0.70,rule,0.76,negative,0.01,0.79,147.68,147.28,5.05
+common > 0.70 & common <= 0.89,rule,0.7,negative,0.01,0.79,54.86,54.75,4.04
+technically complicated <= 0.70 & common <= 0.89,rule,0.51,negative,0.0,0.79,22.31,22.27,3.11
+common <= 0.89,rule,0.99,negative,0.0,0.81,8.63,8.63,2.16

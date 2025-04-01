@@ -1,12 +1,12 @@
 ,rule,coef
-1,technically complicated,-0.31682974
-7,neutral,-0.21703604
-10,subject to time variability,-0.17861573
-8,subject to geographical variability,-0.17707516
-0,conceptually dense,0.15304805
-2,common,0.066842526
-9,interdisciplinary,0.047649335
-3,socially controversial,0.046251386
-5,positive,0.021123603
-4,unambiguous,-0.016695052
-6,negative,0.0051861405
+1,technically complicated,-0.3168295
+7,neutral,-0.21703583
+10,subject to time variability,-0.17861606
+8,subject to geographical variability,-0.1770753
+0,conceptually dense,0.15304643
+2,common,0.066842854
+9,interdisciplinary,0.047649283
+3,socially controversial,0.046251383
+5,positive,0.02112355
+4,unambiguous,-0.016695062
+6,negative,0.005186176

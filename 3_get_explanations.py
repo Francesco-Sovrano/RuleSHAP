@@ -26,7 +26,6 @@ llm_options = {
 	'temperature': 0,
 	'top_p': 0,
 }
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 minimum_score = 1
 maximum_score = 5
@@ -133,7 +132,7 @@ for difficulty, system_instruction_dict in difficulty_system_instruction_dict.it
 			for t in topic_list
 		]
 		print('system_instruction:', system_instruction)
-		all_model_outputs = instruct_model(output_generation_prompt_list, system_instruction=system_instruction, api_key=openai_api_key, **llm_options)
+		all_model_outputs = instruct_model(output_generation_prompt_list, system_instruction=system_instruction, **llm_options)
 		for domain, topic, model_output in zip(domain_list, topic_list, all_model_outputs):
 			if not model_output:
 				continue

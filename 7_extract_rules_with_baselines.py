@@ -90,6 +90,11 @@ metrics_list = [
 	# 'flesch_score',
 	# 'smog_index',
 	# 'coleman_liau_index',
+	# ##############################
+	### LLM-as-a-judge
+	'framing_effect',
+	'information_overload',
+	'oversimplification',
 ]
 
 rule_output_dir = f'xai_analyses_results/baseline_rules/'
@@ -118,11 +123,11 @@ os.makedirs(rule_output_dir, exist_ok=True)
 ################################################################
 
 merged_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_{model}_{difficulty}.csv'))
-X = merged_df[input_features].dropna().values.astype(np.float32)
-
 
 for metric in metrics_list:
-	y = merged_df[[metric]].dropna().values.astype(np.float32)
+	X_and_y = merged_df[input_features+[metric]].dropna().values.astype(np.float32)
+	X = X_and_y[:, :-1]
+	y = X_and_y[:, -1:]
 
 	# ----------------------- Decision Tree Regressor ---------------------------
 	# Initialize the model with desired parameters

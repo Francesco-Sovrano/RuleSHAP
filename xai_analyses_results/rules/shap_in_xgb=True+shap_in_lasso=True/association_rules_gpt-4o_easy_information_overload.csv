@@ -1,0 +1,21 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.89,rule,0.02,positive,0.74,0.8,142.83,142.83,8.65
+common > 0.89 & interdisciplinary > 0.5,rule,0.02,positive,0.13,0.02,79.68,79.09,4.95
+technically complicated > 0.5 & technically complicated <= 0.70 & common > 0.89,rule,0.01,positive,0.1,0.02,139.51,138.42,5.43
+conceptually dense > 0.5 & common > 0.89,rule,0.02,positive,0.07,0.02,112.36,111.73,5.04
+common > 0.89 & positive <= 0.70,rule,0.01,positive,0.07,0.02,46.53,44.19,4.04
+technically complicated <= 0.70 & common > 0.89 & negative > 0.70,rule,0.0,positive,0.04,0.12,4.74,4.66,1.6
+common > 0.89 & neutral <= 0.70,rule,0.02,positive,0.03,0.02,151.02,149.85,5.16
+technically complicated > 0.5 & common > 0.89 & negative > 0.5,rule,0.01,positive,0.01,0.01,57.81,57.51,4.07
+common <= 0.70 & neutral <= 0.5,rule,0.09,positive,0.0,0.46,0.03,0.03,1.0
+conceptually dense > 0.5 & common <= 0.89 & unambiguous > 0.5 & interdisciplinary > 0.5 & interdisciplinary <= 0.89,rule,0.62,negative,0.0,0.5,1.99,1.98,1.0
+conceptually dense > 0.5 & common <= 0.89 & unambiguous <= 0.5 & interdisciplinary > 0.5 & interdisciplinary <= 0.89,rule,0.27,positive,0.0,0.22,1.01,0.99,1.0
+common > 0.5 & common <= 0.70 & unambiguous > 0.5,rule,0.35,negative,0.0,0.4,0.04,0.02,1.0
+common <= 0.89 & positive > 0.70,rule,0.58,negative,0.0,0.79,3.3,3.26,1.19
+technically complicated > 0.5 & common <= 0.70 & positive <= 0.70 & interdisciplinary > 0.5,rule,0.21,positive,0.0,0.28,0.15,0.11,1.0
+technically complicated <= 0.70 & common > 0.5 & common <= 0.89 & subject to geographical variability <= 0.89,rule,0.69,negative,0.0,0.6,11.03,10.97,2.4
+conceptually dense > 0.70 & common <= 0.70 & positive <= 0.70 & interdisciplinary > 0.70,rule,0.18,positive,0.0,0.23,0.17,0.1,1.0
+technically complicated > 0.5 & common > 0.5 & common <= 0.89 & subject to geographical variability > 0.70,rule,0.61,negative,0.0,0.53,30.05,29.86,3.4
+technically complicated > 0.5 & common <= 0.5 & unambiguous <= 0.5 & subject to geographical variability <= 0.89,rule,0.04,positive,0.0,0.05,0.44,0.13,1.0
+common > 0.70 & common <= 0.89,rule,0.4,negative,0.0,0.72,67.97,67.95,4.24
+common <= 0.70 & neutral > 0.5 & neutral <= 0.70 & subject to geographical variability > 0.70,rule,0.3,negative,0.0,0.26,0.04,0.03,1.0

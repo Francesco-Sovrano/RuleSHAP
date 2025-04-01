@@ -1,0 +1,32 @@
+,rule
+0,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous <= 0.700) and (conceptually dense <= 0.700) and (neutral <= 0.700) then response: 2.953
+1,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous <= 0.700) and (conceptually dense <= 0.700) and (neutral > 0.700) then response: 2.735
+2,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous <= 0.700) and (conceptually dense > 0.700) and (positive <= 0.500) then response: 2.883
+3,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous <= 0.700) and (conceptually dense > 0.700) and (positive > 0.500) then response: 2.772
+4,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous > 0.700) and (technically complicated <= 0.500) and (positive <= 0.900) then response: 2.916
+5,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous > 0.700) and (technically complicated <= 0.500) and (positive > 0.900) then response: 3.026
+6,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous > 0.700) and (technically complicated > 0.500) and (positive <= 0.700) then response: 2.892
+7,If (subject to geographical variability <= 0.900) and (technically complicated <= 0.700) and (unambiguous > 0.700) and (technically complicated > 0.500) and (positive > 0.700) then response: 2.837
+8,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common <= 0.700) and (negative <= 0.700) and (common <= 0.500) then response: 2.250
+9,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common <= 0.700) and (negative <= 0.700) and (common > 0.500) then response: 2.597
+10,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common <= 0.700) and (negative > 0.700) and (neutral <= 0.700) then response: 2.694
+11,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common <= 0.700) and (negative > 0.700) and (neutral > 0.700) then response: 3.000
+12,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common > 0.700) and (positive <= 0.500) and (socially controversial <= 0.900) then response: 2.796
+13,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common > 0.700) and (positive <= 0.500) and (socially controversial > 0.900) then response: 2.898
+14,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common > 0.700) and (positive > 0.500) and (positive <= 0.700) then response: 2.660
+15,If (subject to geographical variability <= 0.900) and (technically complicated > 0.700) and (common > 0.700) and (positive > 0.500) and (positive > 0.700) then response: 2.751
+16,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.900) and (positive <= 0.500) and (socially controversial <= 0.900) then response: 2.568
+17,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.900) and (positive <= 0.500) and (socially controversial > 0.900) then response: 2.746
+18,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.900) and (positive > 0.500) and (neutral <= 0.700) then response: 2.560
+19,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common <= 0.900) and (positive > 0.500) and (neutral > 0.700) then response: 2.685
+20,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.900) and (unambiguous <= 0.500) and (negative <= 0.700) then response: 3.000
+21,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.900) and (unambiguous <= 0.500) and (negative > 0.700) then response: 2.000
+22,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.900) and (unambiguous > 0.500) and (negative <= 0.700) then response: 2.682
+23,If (subject to geographical variability > 0.900) and (unambiguous <= 0.700) and (common > 0.900) and (unambiguous > 0.500) and (negative > 0.700) then response: 2.805
+24,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (neutral <= 0.700) and (interdisciplinary <= 0.900) then response: 2.763
+25,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (neutral <= 0.700) and (interdisciplinary > 0.900) then response: 2.400
+26,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (neutral > 0.700) and (positive <= 0.700) then response: 2.000
+27,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated <= 0.700) and (neutral > 0.700) and (positive > 0.700) then response: 2.565
+28,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated > 0.700) and (subject to time variability <= 0.900) and (negative <= 0.700) then response: 2.900
+29,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated > 0.700) and (subject to time variability <= 0.900) and (negative > 0.700) then response: 2.805
+30,If (subject to geographical variability > 0.900) and (unambiguous > 0.700) and (technically complicated > 0.700) and (subject to time variability > 0.900) then response: 3.000

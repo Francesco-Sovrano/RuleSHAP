@@ -11,7 +11,12 @@ evaluation_dir = f"xai_analyses_results/evaluation/shap"
 os.makedirs(evaluation_dir, exist_ok=True)
 
 # Define parameters
-llm_models = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o", "llama3.1"]
+llm_models = [
+	"gpt-3.5-turbo", 
+	"gpt-4o-mini", 
+	"gpt-4o", 
+	'llama3.1', 
+]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1, 3, 10]
 

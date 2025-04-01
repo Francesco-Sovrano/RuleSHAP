@@ -106,6 +106,11 @@ metrics_list = [
 	# 'flesch_score',
 	# 'smog_index',
 	# 'coleman_liau_index',
+	# ##############################
+	### LLM-as-a-judge
+	'framing_effect',
+	'information_overload',
+	'oversimplification',
 ]
 
 # Create the plot directories if they don't exist

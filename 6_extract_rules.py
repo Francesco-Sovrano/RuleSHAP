@@ -100,6 +100,11 @@ metrics_list = [
 	# 'flesch_score',
 	# 'smog_index',
 	# 'coleman_liau_index',
+	# ##############################
+	### LLM-as-a-judge
+	'framing_effect',
+	'information_overload',
+	'oversimplification',
 ]
 
 rule_output_dir = f'xai_analyses_results/rules/shap_in_xgb={use_shap_in_xgb}+shap_in_lasso={use_shap_in_lasso}'
@@ -128,12 +133,12 @@ os.makedirs(rule_output_dir, exist_ok=True)
 ################################################################
 
 merged_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_{model}_{difficulty}.csv'))
-X = merged_df[input_features].dropna().values.astype(np.float32)
-
 
 metric_global_feature_stats_dict = load_cache(os.path.join(csv_file_dir, f'global_shap_stats_{model}_{difficulty}.pkl'))
 for metric in metrics_list:
-	y = merged_df[[metric]].dropna().values.astype(np.float32)
+	X_and_y = merged_df[input_features+[metric]].dropna().values.astype(np.float32)
+	y = X_and_y[:, -1]
+	X = X_and_y[:, :-1]
 	
 	global_feature_stats = metric_global_feature_stats_dict[metric]
 	shap_weights = np.array([global_feature_stats[k]['upper_importance_bound'] for k in input_features])

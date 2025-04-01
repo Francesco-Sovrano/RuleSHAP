@@ -10,7 +10,12 @@ evaluation_dir = f"xai_analyses_results/evaluation/dtree"
 os.makedirs(evaluation_dir, exist_ok=True)
 
 # Define the relevant LLM models
-llm_models = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o", "llama3.1"]
+llm_models = [
+	"gpt-3.5-turbo", 
+	"gpt-4o-mini", 
+	"gpt-4o", 
+	'llama3.1', 
+]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1,3,10]
 
@@ -133,5 +138,15 @@ mrr_results_df.index = pd.MultiIndex.from_tuples(mrr_results_df.index, names=["L
 mrr_results_csv_path = os.path.join(evaluation_dir, "mrr_results.csv")
 mrr_results_df.to_csv(mrr_results_csv_path, index=True)
 
+# --- Save raw RR results to CSV ---
+rr_results_df = pd.DataFrame.from_dict(
+	{(llm, complexity): {f"RR@{k}": rr_results[llm][complexity][f"RR@{k}"] for k in k_levels}
+	 for llm in rr_results for complexity in rr_results[llm]}, orient='index'
+)
+rr_results_df.index = pd.MultiIndex.from_tuples(rr_results_df.index, names=["LLM", "Complexity"])
+rr_results_csv_path = os.path.join(evaluation_dir, "rr_results.csv")
+rr_results_df.to_csv(rr_results_csv_path, index=True)
+
 print(f'Rule counts saved to: {rule_counts_csv_path}')
 print(f'MRR results saved to: {mrr_results_csv_path}')
+print(f'RR results saved to: {rr_results_csv_path}')

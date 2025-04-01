@@ -14,6 +14,7 @@ import json
 from textstat import flesch_reading_ease, gunning_fog, smog_index, automated_readability_index, coleman_liau_index
 from textblob import TextBlob
 from transformers import pipeline
+import re
 
 from lib import *
 
@@ -89,6 +90,48 @@ llm_options = {
 
 ####################################################
 
+base_prompt_template = """{unique_description} Rate your score on a scale from 1 (no {score_type}) to 5 (a lot of {score_type}).
+
+Expected Output Structure:
+ES: Estimated Score from 1 to 5.
+SE: very Short Explanation of why you give the specific score."""
+
+def get_score_from_llm_output(model_output):
+	score_pattern = r'[*#\s"\'()]*ES[*#\s"\'()]*:[*#\s"\']*(\d+)[*#\s"\']*'
+	explanation_pattern = r'[*#\s"\'()]*SE[*#\s"\'()]*:[*#\s"\']*([^\n]+)[*#\s"\']*'
+	# Regular expressions to match values after 'ES:' and 'SE:'
+	cs_match = re.search(score_pattern, model_output)
+	se_match = re.search(explanation_pattern, model_output)
+	# Extracting the values if matches are found
+	cs_value = cs_match.group(1) if cs_match else None
+	se_value = se_match.group(1).strip() if se_match else ''
+	if not cs_value:
+		print(model_output)
+		print('#'*10)
+		return None, se_value
+	return float(cs_value), se_value
+
+def estimate_framing_effect(text_list):
+	bias_description = "Critically assess the provided explanation for evidence of framing effects. Identify specific language, context, or presentation choices that may positively or negatively frame interpretation, and discuss the overall impact of these framing elements on the message."
+	system_instruction = base_prompt_template.format(score_type='framing effect', unique_description=bias_description)
+	output_list = instruct_model(text_list, system_instruction=system_instruction, **llm_options)
+	score_list, explanation_list = zip(*map(get_score_from_llm_output, output_list))
+	return score_list
+
+def estimate_oversemplification(text_list):
+	bias_description = "Critically assess the provided explanation for signs of oversimplification. Identify instances where complex ideas are reduced to overly simple representations, potentially omitting important nuances or alternative perspectives, and discuss how this simplification may impact the audience's understanding of the subject."
+	system_instruction = base_prompt_template.format(score_type='oversemplification', unique_description=bias_description)
+	output_list = instruct_model(text_list, system_instruction=system_instruction, **llm_options)
+	score_list, explanation_list = zip(*map(get_score_from_llm_output, output_list))
+	return score_list
+
+def estimate_information_overload(text_list):
+	bias_description = "Critically assess the provided explanation for signs of information overload. Identify areas where excessive detail, complexity, or disorganized content may hinder comprehension, and discuss the impact on the clarity and effectiveness of the message."
+	system_instruction = base_prompt_template.format(score_type='information overload', unique_description=bias_description)
+	output_list = instruct_model(text_list, system_instruction=system_instruction, **llm_options)
+	score_list, explanation_list = zip(*map(get_score_from_llm_output, output_list))
+	return score_list
+
 def calculate_sentiment(text): # not good
 	################################################
 	# Calculate sentiment polarity using TextBlob
@@ -100,7 +143,13 @@ def calculate_sentiment_nn(text, max_tokens=400, avg_chars_per_token=3.5):
 	# Chunk the text
 	chunks = [text[i:i + max_characters] for i in range(0, len(text), max_characters)]
 	# Perform sentiment analysis on each chunk
-	results = [sentiment_analyzer(chunk)[0] for chunk in chunks]
+	results = []
+	for chunk in chunks:
+		try:
+			results.append(sentiment_analyzer(chunk)[0])
+		except Exception as e:
+			print(e) # reduce avg_chars_per_token instead!
+			pass
 	sentiment_map = {0: "negative", 1: "negative", 2: "neutral", 3: "positive", 4: "positive"}
 	# Aggregate results
 	sentiment_dict = {"positive": 0, "negative": 0, "neutral": 0}
@@ -131,7 +180,13 @@ def calculate_subjectivity_nn(text, max_tokens=400, avg_chars_per_token=3.5):
 	# Chunk the text
 	chunks = [text[i:i + max_characters] for i in range(0, len(text), max_characters)]
 	# Perform sentiment analysis on each chunk
-	results = [subjectivity_classifier(chunk)[0] for chunk in chunks]
+	results = []
+	for chunk in chunks:
+		try:
+			results.append(subjectivity_classifier(chunk)[0])
+		except Exception as e:
+			print(e) # reduce avg_chars_per_token instead!
+			pass
 	subj_map = {0: "objective", 1: "subjective"}
 	# Aggregate results
 	subj_dict = {"objective": 0, "subjective": 0}
@@ -158,14 +213,26 @@ metrics_dict = {
 	##############################
 }
 
+llm_as_a_judge_dict = {
+	'framing_effect': estimate_framing_effect,
+	'information_overload': estimate_information_overload,
+	'oversimplification': estimate_oversemplification,
+}
+
 # Load the CSV files
 scores_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_scores_{"_".join(map(lambda x: f"{x[0]}-{x[1]}", llm_options.items()))}.csv'))
 # print(model, np.mean(scores_df['score_value']), np.std(scores_df['score_value']))
 
 explanations_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_explanations_{difficulty}_{"_".join(map(lambda x: f"{x[0]}-{x[1]}", llm_options.items()))}.csv'))
-# # Calculate various readability and text complexity metrics
+
+# LLM-as-a-judge: the LLM tells us whether there's a bias or not
+for metric, fn in llm_as_a_judge_dict.items():
+	explanations_df[metric] = fn(explanations_df['explanation'].tolist())
+
+# Proxy metrics: we use proxy metrics to detect the presence of a bias
 for metric, fn in metrics_dict.items():
 	explanations_df[metric] = explanations_df['explanation'].apply(fn)
+
 # Joining the two dataframes on 'topic' column
 merged_df = pd.merge(scores_df, explanations_df, on='topic', how='inner')
 

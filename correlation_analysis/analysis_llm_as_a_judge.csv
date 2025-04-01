@@ -1,0 +1,13 @@
+llm_as_a_judge,proxy_metric,correlation,p_value,effect_size
+framing_effect,subjectivity_score_nn,0.7551317794414614,0.0,0.5702240043224278
+information_overload,explanation_length,0.6542603312478021,0.0,0.4280565810444838
+framing_effect,explanation_length,0.5998199327465221,0.0,0.3597839517200423
+information_overload,subjectivity_score_nn,0.5989260286711168,0.0,0.3587123878197554
+framing_effect,sentiment_score_nn,-0.41755739572248324,0.0,0.17435417872254247
+information_overload,gunning_fog,0.35217100284902914,0.0,0.12402441524769088
+framing_effect,gunning_fog,0.3301945242358242,0.0,0.10902842383532228
+oversimplification,subjectivity_score_nn,0.3238103739578667,0.0,0.10485315828273349
+information_overload,sentiment_score_nn,-0.2677132758463153,0.0,0.07167039806436531
+oversimplification,explanation_length,0.17924232190674527,0.0,0.0321278099625213
+oversimplification,sentiment_score_nn,-0.1690737247195528,0.0,0.028585924390543114
+oversimplification,gunning_fog,0.15181376374372949,2.135310683675626e-304,0.023047418862036914

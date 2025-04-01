@@ -1,0 +1,33 @@
+,rule
+0,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability <= 0.500) and (conceptually dense <= 0.700) and (positive <= 0.500) then response: 13.306
+1,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability <= 0.500) and (conceptually dense <= 0.700) and (positive > 0.500) then response: 18.670
+2,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability <= 0.500) and (conceptually dense > 0.700) and (socially controversial <= 0.300) then response: 16.180
+3,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability <= 0.500) and (conceptually dense > 0.700) and (socially controversial > 0.300) then response: 21.080
+4,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability > 0.500) and (technically complicated <= 0.700) and (socially controversial <= 0.500) then response: 18.275
+5,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability > 0.500) and (technically complicated <= 0.700) and (socially controversial > 0.500) then response: 20.667
+6,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability > 0.500) and (technically complicated > 0.700) and (conceptually dense <= 0.900) then response: 20.767
+7,If (positive <= 0.700) and (socially controversial <= 0.700) and (subject to time variability > 0.500) and (technically complicated > 0.700) and (conceptually dense > 0.900) then response: 22.976
+8,If (positive <= 0.700) and (socially controversial > 0.700) and (common <= 0.700) and (positive <= 0.500) and (technically complicated <= 0.700) then response: 22.376
+9,If (positive <= 0.700) and (socially controversial > 0.700) and (common <= 0.700) and (positive <= 0.500) and (technically complicated > 0.700) then response: 23.513
+10,If (positive <= 0.700) and (socially controversial > 0.700) and (common <= 0.700) and (positive > 0.500) and (common <= 0.500) then response: 16.337
+11,If (positive <= 0.700) and (socially controversial > 0.700) and (common <= 0.700) and (positive > 0.500) and (common > 0.500) then response: 22.520
+12,If (positive <= 0.700) and (socially controversial > 0.700) and (common > 0.700) and (socially controversial <= 0.900) and (positive <= 0.300) then response: 19.786
+13,If (positive <= 0.700) and (socially controversial > 0.700) and (common > 0.700) and (socially controversial <= 0.900) and (positive > 0.300) then response: 21.467
+14,If (positive <= 0.700) and (socially controversial > 0.700) and (common > 0.700) and (socially controversial > 0.900) and (common <= 0.900) then response: 22.657
+15,If (positive <= 0.700) and (socially controversial > 0.700) and (common > 0.700) and (socially controversial > 0.900) and (common > 0.900) then response: 20.418
+16,If (positive > 0.700) and (common <= 0.500) and (socially controversial <= 0.700) and (unambiguous <= 0.500) and (neutral <= 0.500) then response: 17.520
+17,If (positive > 0.700) and (common <= 0.500) and (socially controversial <= 0.700) and (unambiguous <= 0.500) and (neutral > 0.500) then response: 13.914
+18,If (positive > 0.700) and (common <= 0.500) and (socially controversial <= 0.700) and (unambiguous > 0.500) and (socially controversial <= 0.500) then response: 15.299
+19,If (positive > 0.700) and (common <= 0.500) and (socially controversial <= 0.700) and (unambiguous > 0.500) and (socially controversial > 0.500) then response: 16.278
+20,If (positive > 0.700) and (common <= 0.500) and (socially controversial > 0.700) and (conceptually dense <= 0.900) and (technically complicated <= 0.500) then response: 15.125
+21,If (positive > 0.700) and (common <= 0.500) and (socially controversial > 0.700) and (conceptually dense <= 0.900) and (technically complicated > 0.500) then response: 17.274
+22,If (positive > 0.700) and (common <= 0.500) and (socially controversial > 0.700) and (conceptually dense > 0.900) and (negative <= 0.700) then response: 19.067
+23,If (positive > 0.700) and (common <= 0.500) and (socially controversial > 0.700) and (conceptually dense > 0.900) and (negative > 0.700) then response: 16.220
+24,If (positive > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (conceptually dense <= 0.500) and (socially controversial <= 0.500) then response: 22.697
+25,If (positive > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (conceptually dense <= 0.500) and (socially controversial > 0.500) then response: 25.893
+26,If (positive > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (conceptually dense > 0.500) and (neutral <= 0.700) then response: 25.440
+27,If (positive > 0.700) and (common > 0.500) and (conceptually dense <= 0.700) and (conceptually dense > 0.500) and (neutral > 0.700) then response: 23.768
+28,If (positive > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (interdisciplinary <= 0.900) and (socially controversial <= 0.500) then response: 24.997
+29,If (positive > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (interdisciplinary <= 0.900) and (socially controversial > 0.500) then response: 25.884
+30,If (positive > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (interdisciplinary > 0.900) and (common <= 0.700) then response: 27.560
+31,If (positive > 0.700) and (common > 0.500) and (conceptually dense > 0.700) and (interdisciplinary > 0.900) and (common > 0.700) then response: 26.364

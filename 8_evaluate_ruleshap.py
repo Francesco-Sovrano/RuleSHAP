@@ -28,7 +28,12 @@ evaluation_dir = f"xai_analyses_results/evaluation/shap_in_xgb={use_shap_in_xgb}
 os.makedirs(evaluation_dir, exist_ok=True)
 
 # Define the relevant LLM models
-llm_models = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o", "llama3.1"]
+llm_models = [
+	"gpt-3.5-turbo", 
+	"gpt-4o-mini", 
+	"gpt-4o", 
+	'llama3.1', 
+]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1,3,10]
 
@@ -40,10 +45,12 @@ mrr_metrics = {
 	],
 	"explanation_length_medium": [
 		"common <= 0.5 & positive > 0.5", 
+		# "common <= 0.5 & positive > 0.60",
 		"common <= 0.5 & negative <= 0.70" # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
 	],
 	"explanation_length_hard": [
 		"common <= 0.5 & positive > 0.5", 
+		# "common <= 0.5 & positive > 0.60",
 		"common <= 0.5 & negative <= 0.70" # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
 	],
 	"subjectivity_score_nn_medium": [
@@ -62,7 +69,57 @@ mrr_metrics = {
 		"interdisciplinary <= 0.5",
 		"interdisciplinary > 0.70 & interdisciplinary <= 0.89",
 		"interdisciplinary > 0.5 & interdisciplinary <= 0.70",
-		"interdisciplinary > 0.89"
+		"interdisciplinary > 0.89",
+	],
+	#####
+	## LLM as a judge
+	"oversimplification_easy": [
+		'common > 0.89',
+		"common <= 0.89"
+	],
+	"information_overload_easy": [
+		'common > 0.89',
+		"common <= 0.89"
+	],
+	"oversimplification_medium": [
+		"common <= 0.5 & positive > 0.5", 
+		"common <= 0.5 & negative <= 0.70", # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
+	],
+	"information_overload_medium": [
+		"common <= 0.5 & positive > 0.5", 
+		"common <= 0.5 & negative <= 0.70", # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
+		"positive > 0.70", 
+		"negative <= 0.89", # positivity is complementary to negativity
+		"positive <= 0.70",
+		"negative > 0.89", # positivity is complementary to negativity
+	],
+	"framing_effect_medium": [
+		"positive > 0.70", 
+		"negative <= 0.89", # positivity is complementary to negativity
+		"positive <= 0.70",
+		"negative > 0.89", # positivity is complementary to negativity
+	],
+	"oversimplification_hard": [
+		"common <= 0.5 & positive > 0.5", 
+		"common <= 0.5 & negative <= 0.70", # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
+	],
+	"information_overload_hard": [
+		"interdisciplinary <= 0.5",
+		"interdisciplinary > 0.70 & interdisciplinary <= 0.89",
+		"interdisciplinary > 0.5 & interdisciplinary <= 0.70",
+		"interdisciplinary > 0.89",
+		"common <= 0.5 & positive > 0.5", 
+		"common <= 0.5 & negative <= 0.70", # since positivity is complementary to negativity, positive > 0.5 is equivalent to say the negativity score is negative <= 0.70
+		"positive > 0.70", 
+		"negative <= 0.89", # positivity is complementary to negativity
+		"positive <= 0.70",
+		"negative > 0.89", # positivity is complementary to negativity
+	],
+	"framing_effect_hard": [
+		"positive > 0.70", 
+		"negative <= 0.89", # positivity is complementary to negativity
+		"positive <= 0.70",
+		"negative > 0.89", # positivity is complementary to negativity
 	],
 }
 
@@ -105,7 +162,7 @@ for file_name in os.listdir(directory_path):
 	# Compute MRR only for relevant conditions
 	if metric_complexity in mrr_metrics:
 		# Extract rank positions based on importance (assuming higher importance = better ranking)
-		df = df.sort_values(by="importance", ascending=False).reset_index(drop=True)
+		df = df.sort_values(by="weighted_importance", ascending=False).reset_index(drop=True)
 		for k in k_levels:
 			top_k_rules = df.head(k)["rule"].tolist()
 			j=0
@@ -146,5 +203,15 @@ mrr_results_df.index = pd.MultiIndex.from_tuples(mrr_results_df.index, names=["L
 mrr_results_csv_path = os.path.join(evaluation_dir, "mrr_results.csv")
 mrr_results_df.to_csv(mrr_results_csv_path, index=True)
 
+# --- Save raw RR results to CSV ---
+rr_results_df = pd.DataFrame.from_dict(
+	{(llm, complexity): {f"RR@{k}": rr_results[llm][complexity][f"RR@{k}"] for k in k_levels}
+	 for llm in rr_results for complexity in rr_results[llm]}, orient='index'
+)
+rr_results_df.index = pd.MultiIndex.from_tuples(rr_results_df.index, names=["LLM", "Complexity"])
+rr_results_csv_path = os.path.join(evaluation_dir, "rr_results.csv")
+rr_results_df.to_csv(rr_results_csv_path, index=True)
+
 print(f'Rule counts saved to: {rule_counts_csv_path}')
 print(f'MRR results saved to: {mrr_results_csv_path}')
+print(f'RR results saved to: {rr_results_csv_path}')

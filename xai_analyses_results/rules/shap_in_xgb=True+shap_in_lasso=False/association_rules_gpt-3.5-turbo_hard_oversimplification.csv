@@ -1,0 +1,9 @@
+rule,type,conditions_coverage,impact_direction,importance,min_rule_coverage,total_gain,max_gain,weighted_importance
+common > 0.5 & socially controversial <= 0.70 & positive > 0.70 & negative <= 0.5 & interdisciplinary > 0.70,rule,0.4,positive,0.35,0.43,223.83,110.15,6.35
+positive > 0.70 & negative <= 0.5 & subject to geographical variability > 0.70 & interdisciplinary > 0.70,rule,0.53,positive,0.17,0.55,143.7,77.14,5.06
+common > 0.70 & common <= 0.89 & positive > 0.70 & subject to geographical variability > 0.70,rule,0.5,positive,0.13,0.4,128.73,84.76,5.04
+positive > 0.70 & negative <= 0.5 & neutral > 0.70 & subject to geographical variability > 0.70 & subject to time variability <= 0.89,rule,0.56,positive,0.1,0.47,230.16,124.69,5.31
+unambiguous > 0.70 & positive > 0.70 & positive <= 0.89 & negative <= 0.5 & subject to time variability > 0.70,rule,0.5,positive,0.09,0.46,202.5,127.0,5.26
+common > 0.70 & positive > 0.70 & interdisciplinary > 0.70 & subject to time variability <= 0.89,rule,0.47,positive,0.09,0.41,113.07,69.68,4.61
+conceptually dense > 0.70 & positive <= 0.70,rule,0.26,negative,0.06,0.21,77.52,77.3,4.62
+common > 0.70 & positive <= 0.70,rule,0.18,negative,0.02,0.2,385.08,378.82,6.07

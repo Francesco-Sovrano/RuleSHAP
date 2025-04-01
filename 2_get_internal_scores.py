@@ -27,7 +27,6 @@ llm_options = {
 	'temperature': 0,
 	'top_p': 0,
 }
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 csv_file_dir = 'abstract_model_io/'
 os.makedirs(csv_file_dir, exist_ok=True)
@@ -118,7 +117,7 @@ input_score_prompt_list_dict = {
 results = []
 for score_type in score_type_descriptions.keys():
 	print('score_type:', score_type)
-	all_model_outputs = instruct_model(input_score_prompt_list_dict[score_type], api_key=openai_api_key, **llm_options)
+	all_model_outputs = instruct_model(input_score_prompt_list_dict[score_type], **llm_options)
 	for topic,domain,model_output in zip(all_topics,all_domains,all_model_outputs):
 		if not model_output:
 			continue
