@@ -15,6 +15,7 @@ llm_models = [
 	"gpt-4o-mini", 
 	"gpt-4o", 
 	'llama3.1', 
+	'llama3.1:70b'
 ]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1,3,10]
@@ -50,6 +51,56 @@ mrr_metrics = {
 		"If (interdisciplinary <= 0.900) and (interdisciplinary > 0.700) then",
 		"If (interdisciplinary <= 0.700) and (interdisciplinary > 0.500) then",
 		"If (interdisciplinary > 0.900) then",
+	],
+	#####
+	## LLM as a judge
+	"oversimplification_easy": [
+		"If (common > 0.900) then", 
+		"If (common <= 0.900) then"
+	],
+	"information_overload_easy": [
+		"If (common > 0.900) then", 
+		"If (common <= 0.900) then"
+	],
+	"oversimplification_medium": [
+		"If (common <= 0.500) and (positive > 0.500) then", 
+		"If (common <= 0.500) and (negative <= 0.700) then", 
+	],
+	"information_overload_medium": [
+		"If (common <= 0.500) and (positive > 0.500) then", 
+		"If (common <= 0.500) and (negative <= 0.700) then", 
+		"If (positive > 0.700) then",
+		"If (negative <= 0.900) then",
+		"If (positive <= 0.700) then",
+		"If (negative > 0.900) then",
+	],
+	"framing_effect_medium": [
+		"If (positive > 0.700) then",
+		"If (negative <= 0.900) then",
+		"If (positive <= 0.700) then",
+		"If (negative > 0.900) then",
+	],
+	"oversimplification_hard": [
+		"If (common <= 0.500) and (positive > 0.500) then", 
+		"If (common <= 0.500) and (negative <= 0.700) then", 
+	],
+	"information_overload_hard": [
+		"If (interdisciplinary <= 0.500) then",
+		"If (interdisciplinary <= 0.900) and (interdisciplinary > 0.700) then",
+		"If (interdisciplinary <= 0.700) and (interdisciplinary > 0.500) then",
+		"If (interdisciplinary > 0.900) then",
+		"If (common <= 0.500) and (positive > 0.500) then", 
+		"If (common <= 0.500) and (negative <= 0.700) then", 
+		"If (positive > 0.700) then",
+		"If (negative <= 0.900) then",
+		"If (positive <= 0.700) then",
+		"If (negative > 0.900) then",
+	],
+	"framing_effect_hard": [
+		"If (positive > 0.700) then",
+		"If (negative <= 0.900) then",
+		"If (positive <= 0.700) then",
+		"If (negative > 0.900) then",
 	],
 }
 

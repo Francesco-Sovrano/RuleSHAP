@@ -16,6 +16,7 @@ llm_models = [
 	"gpt-4o-mini", 
 	"gpt-4o", 
 	'llama3.1', 
+	'llama3.1:70b'
 ]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1, 3, 10]
@@ -28,6 +29,16 @@ mrr_metrics = {
 	"subjectivity_score_nn_medium": ["positive", "negative"],
 	"subjectivity_score_nn_hard": ["positive", "negative"],
 	"gunning_fog_hard": ["interdisciplinary"],
+	#####
+	## LLM as a judge
+	"oversimplification_easy": ["common"],
+	"information_overload_easy": ["common"],
+	"oversimplification_medium": ["common", "positive", "negative"],
+	"information_overload_medium": ["common", "positive", "negative"],
+	"framing_effect_medium": ["positive", "negative"],
+	"oversimplification_hard": ["common", "positive", "negative"],
+	"information_overload_hard": ["interdisciplinary", "common", "positive", "negative"],
+	"framing_effect_hard": ["positive", "negative"],
 }
 
 def compute_mrr(shap_weights, target_features, k_levels):

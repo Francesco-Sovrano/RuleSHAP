@@ -9,7 +9,9 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 import pandas as pd
 import numpy as np
 
-from scipy.stats import pearsonr, spearmanr
+# from scipy.stats import pearsonr, spearmanr
+from dcor import distance_correlation
+from dcor.independence import distance_correlation_t_test
 
 ################################################################
 
@@ -85,6 +87,26 @@ llm_as_a_judge_list = [
 	'oversimplification',
 ]
 
+# Define the relevant metrics for MRR computation
+mrr_metrics = {
+	"explanation_length_easy": ["common"],
+	"explanation_length_medium": ["common", "positive", "negative"],
+	"explanation_length_hard": ["common", "positive", "negative"],
+	"subjectivity_score_nn_medium": ["positive", "negative"],
+	"subjectivity_score_nn_hard": ["positive", "negative"],
+	"gunning_fog_hard": ["interdisciplinary"],
+	# #####
+	# ## LLM as a judge
+	# "oversimplification_easy": ["common"],
+	# "information_overload_easy": ["common"],
+	# "oversimplification_medium": ["common", "positive", "negative"],
+	# "information_overload_medium": ["common", "positive", "negative"],
+	# "framing_effect_medium": ["positive", "negative"],
+	# "oversimplification_hard": ["common", "positive", "negative"],
+	# "information_overload_hard": ["interdisciplinary", "common", "positive", "negative"],
+	# "framing_effect_hard": ["positive", "negative"],
+}
+
 ################################################################
 
 merged_df = pd.read_csv(os.path.join('abstract_model_io/', f'topic_{model}_{difficulty}.csv'))
@@ -92,22 +114,25 @@ merged_df = pd.read_csv(os.path.join('abstract_model_io/', f'topic_{model}_{diff
 # SHAP analysis for each metric
 correlation_analysis_stats = []
 for metric in proxy_metrics_list+llm_as_a_judge_list:
-	for feature in input_features:
+	features_to_check = mrr_metrics.get(f"{metric}_{difficulty}", []) if difficulty != 'baseline' else input_features
+	for feature in features_to_check:
 		X_and_y = merged_df[[feature,metric]].dropna().values.astype(np.float32)
 		Y = X_and_y[:, -1]
 		X = X_and_y[:, :-1]
-		corr, p_value = spearmanr(X, Y)
-		effect_size = corr ** 2  # Using r^2 as an effect size measure
+		# X /= np.max(X)
+		correlation = distance_correlation(X, Y)
+		p_value, statistic = distance_correlation_t_test(X, Y)
+		# effect_size = corr ** 2  # Using r^2 as an effect size measure # This value can be interpreted as the proportion of variance in the metric that is explained by the feature
 		correlation_analysis_stats.append({
 			'metric': metric,
 			'feature': feature,
-			'correlation': corr,
+			'correlation': correlation,
 			'p_value': p_value,
-			'effect_size': effect_size, # This value can be interpreted as the proportion of variance in the metric that is explained by the feature
+			'statistic': statistic,
 		})
 
 df = pd.DataFrame(correlation_analysis_stats)
-df = df.sort_values(by="effect_size", ascending=False).reset_index(drop=True)
+df = df.sort_values(by="correlation", ascending=False).reset_index(drop=True)
 # Define the filename for the CSV file
 csv_filename = os.path.join(csv_file_dir, f'analysis_{model}_{difficulty}.csv')
 # Save the DataFrame to a CSV file

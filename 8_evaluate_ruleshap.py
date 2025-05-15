@@ -33,6 +33,7 @@ llm_models = [
 	"gpt-4o-mini", 
 	"gpt-4o", 
 	'llama3.1', 
+	'llama3.1:70b'
 ]
 complexity_levels = ["easy", "medium", "hard"]
 k_levels = [1,3,10]

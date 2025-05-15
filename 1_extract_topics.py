@@ -23,7 +23,7 @@ model_list = [
 	'gpt-4o-mini', 
 	'gpt-4o', 
 	'llama3.1', 
-	# 'llama3.1:70b',
+	'llama3.1:70b',
 ]
 
 input_space_dimension_dict = {
