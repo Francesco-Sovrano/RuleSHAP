@@ -171,6 +171,48 @@ python 7_extract_rules_with_baselines.py --model llama3.1 --difficulty hard
 ######################################################
 
 ######################################################
+### llama3.1:70b
+python 2_get_internal_scores.py --model llama3.1:70b
+python 3_get_explanations.py --model llama3.1:70b
+
+python 4_get_output_metrics.py --model llama3.1:70b --difficulty hard 
+python 4_get_output_metrics.py --model llama3.1:70b --difficulty medium 
+python 4_get_output_metrics.py --model llama3.1:70b --difficulty easy 
+python 4_get_output_metrics.py --model llama3.1:70b --difficulty baseline 
+
+python 5_compute_shap_values.py --fast_shap_estimate --model llama3.1:70b --difficulty hard &
+python 5_compute_shap_values.py --fast_shap_estimate --model llama3.1:70b --difficulty medium 
+python 5_compute_shap_values.py --fast_shap_estimate --model llama3.1:70b --difficulty easy 
+python 5_compute_shap_values.py --fast_shap_estimate --model llama3.1:70b --difficulty baseline 
+
+python 6_extract_rules.py --model llama3.1:70b --difficulty easy --use_shap_in_xgb --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty easy --use_shap_in_xgb &
+python 6_extract_rules.py --model llama3.1:70b --difficulty easy --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty easy &
+
+python 6_extract_rules.py --model llama3.1:70b --difficulty baseline --use_shap_in_xgb --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty baseline --use_shap_in_xgb &
+python 6_extract_rules.py --model llama3.1:70b --difficulty baseline --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty baseline 
+
+python 6_extract_rules.py --model llama3.1:70b --difficulty hard --use_shap_in_xgb --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty hard --use_shap_in_xgb &
+python 6_extract_rules.py --model llama3.1:70b --difficulty hard --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty hard &
+
+python 6_extract_rules.py --model llama3.1:70b --difficulty medium --use_shap_in_xgb --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty medium --use_shap_in_xgb &
+python 6_extract_rules.py --model llama3.1:70b --difficulty medium --use_shap_in_lasso &
+python 6_extract_rules.py --model llama3.1:70b --difficulty medium 
+
+python 7_extract_rules_with_baselines.py --model llama3.1:70b --difficulty baseline &
+python 7_extract_rules_with_baselines.py --model llama3.1:70b --difficulty easy &
+python 7_extract_rules_with_baselines.py --model llama3.1:70b --difficulty medium &
+python 7_extract_rules_with_baselines.py --model llama3.1:70b --difficulty hard 
+
+######################################################
+
+######################################################
 ### Evaluate all XAI methods
 python 8_evaluate_ruleshap.py --use_shap_in_xgb --use_shap_in_lasso &
 python 8_evaluate_ruleshap.py --use_shap_in_xgb & # for ablation
@@ -186,10 +228,29 @@ python 11_evaluate_shap.py
 #####################
 ### Statistical analyses
 
+python 12_input_output_correlation_analysis.py --model gpt-3.5-turbo --difficulty easy &
+python 12_input_output_correlation_analysis.py --model gpt-4o-mini --difficulty easy &
+python 12_input_output_correlation_analysis.py --model gpt-4o --difficulty easy &
+python 12_input_output_correlation_analysis.py --model llama3.1 --difficulty easy &
+python 12_input_output_correlation_analysis.py --model llama3.1:70b --difficulty easy 
+
+python 12_input_output_correlation_analysis.py --model gpt-3.5-turbo --difficulty medium &
+python 12_input_output_correlation_analysis.py --model gpt-4o-mini --difficulty medium &
+python 12_input_output_correlation_analysis.py --model gpt-4o --difficulty medium &
+python 12_input_output_correlation_analysis.py --model llama3.1 --difficulty medium &
+python 12_input_output_correlation_analysis.py --model llama3.1:70b --difficulty medium 
+
+python 12_input_output_correlation_analysis.py --model gpt-3.5-turbo --difficulty hard &
+python 12_input_output_correlation_analysis.py --model gpt-4o-mini --difficulty hard &
+python 12_input_output_correlation_analysis.py --model gpt-4o --difficulty hard &
+python 12_input_output_correlation_analysis.py --model llama3.1 --difficulty hard &
+python 12_input_output_correlation_analysis.py --model llama3.1:70b --difficulty hard 
+
 python 12_input_output_correlation_analysis.py --model gpt-3.5-turbo --difficulty baseline &
 python 12_input_output_correlation_analysis.py --model gpt-4o-mini --difficulty baseline &
 python 12_input_output_correlation_analysis.py --model gpt-4o --difficulty baseline &
-# python 12_input_output_correlation_analysis.py --model llama3.1 --difficulty baseline &
+python 12_input_output_correlation_analysis.py --model llama3.1 --difficulty baseline
+python 12_input_output_correlation_analysis.py --model llama3.1:70b --difficulty baseline 
 
 python 13_llm_estimate_proxy_metrics_correlation_analysis.py
 

@@ -1,0 +1,7 @@
+metric,feature,correlation,p_value,statistic
+gunning_fog,interdisciplinary,0.8518249139111036,0.0,6095.81942935443
+subjectivity_score_nn,positive,0.49469330895340946,0.0,1457.921413655794
+explanation_length,common,0.46123574690677405,0.0,1254.843361699167
+subjectivity_score_nn,negative,0.3057201560641843,0.0,541.8529120698358
+explanation_length,positive,0.27261726533299563,0.0,430.66139423519854
+explanation_length,negative,0.12247588015782288,0.0,85.48586254918405

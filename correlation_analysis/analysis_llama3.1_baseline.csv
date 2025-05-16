@@ -1,0 +1,78 @@
+metric,feature,correlation,p_value,statistic
+explanation_length,conceptually dense,0.35101553949393416,0.0,922.591045003597
+gunning_fog,unambiguous,0.3330569058651925,0.0,831.3828123869419
+explanation_length,unambiguous,0.30811498722032393,0.0,709.492851856848
+gunning_fog,socially controversial,0.28958706576393156,0.0,624.689222046619
+explanation_length,technically complicated,0.25693491351362163,0.0,490.8265087072331
+explanation_length,socially controversial,0.24498261589583606,0.0,445.9127348580489
+subjectivity_score_nn,technically complicated,0.1911260401582278,0.0,270.97608450760447
+gunning_fog,conceptually dense,0.18570591494317337,0.0,255.14716491912705
+gunning_fog,negative,0.17979252176277333,0.0,238.79462619676818
+sentiment_score_nn,positive,0.17516319646642706,0.0,226.7741743905832
+gunning_fog,common,0.16403427621326033,0.0,198.82677495406426
+information_overload,unambiguous,0.1636067976024029,0.0,197.50638152685536
+explanation_length,negative,0.15072857472284806,0.0,167.22990868790737
+framing_effect,unambiguous,0.14973052891028557,0.0,166.08086537054174
+oversimplification,unambiguous,0.146228233319115,0.0,158.39441856257366
+framing_effect,socially controversial,0.1416888039917949,0.0,148.08418670037125
+sentiment_score_nn,negative,0.13562466182321573,0.0,135.36263434319412
+subjectivity_score_nn,unambiguous,0.1349593997347754,0.0,134.67414534815467
+sentiment_score_nn,unambiguous,0.12493134289302732,0.0,110.85626674270287
+information_overload,technically complicated,0.11615514363138363,0.0,98.99393562618418
+sentiment_score_nn,socially controversial,0.11266664340611897,0.0,92.69331119895867
+sentiment_score_nn,technically complicated,0.10799061519082098,0.0,85.02236137810763
+gunning_fog,neutral,0.1027096865286433,0.0,76.99422134352795
+subjectivity_score_nn,socially controversial,0.10208560898222632,0.0,76.51300032577275
+sentiment_score_nn,conceptually dense,0.09792031301895397,0.0,69.5886398482186
+gunning_fog,technically complicated,0.09626550874716572,0.0,67.23949582830176
+explanation_length,positive,0.09458534588208037,0.0,64.85215463180118
+subjectivity_score_nn,negative,0.09451326888261502,0.0,65.25077139839446
+subjectivity_score_nn,positive,0.08492462568212955,0.0,52.59505391195919
+oversimplification,socially controversial,0.07261451843607918,0.0,38.136759701371055
+oversimplification,conceptually dense,0.0712913369456505,0.0,36.770964241647874
+sentiment_score_nn,neutral,0.0689417885085012,0.0,34.197294977373026
+framing_effect,technically complicated,0.06824274044744934,0.0,33.81393776677768
+information_overload,conceptually dense,0.06169752033058321,0.0,26.61116251550002
+explanation_length,neutral,0.06038616279362715,0.0,25.60206319425632
+subjectivity_score_nn,common,0.057250726890831855,0.0,23.384827607816813
+information_overload,negative,0.05548730298424454,0.0,21.531881606856405
+framing_effect,negative,0.05528570295100459,0.0,21.556829040975153
+subjectivity_score_nn,neutral,0.05392593438984526,0.0,20.674592568203494
+oversimplification,negative,0.05033270750945992,0.0,17.70146641256254
+information_overload,socially controversial,0.04668288356677224,0.0,14.76222609637942
+oversimplification,technically complicated,0.04356064439606525,0.0,13.118405724732945
+sentiment_score_nn,common,0.043237253681561706,0.0,12.932634571659975
+framing_effect,neutral,0.0312067002815506,1.1478495931527277e-10,6.340132146603041
+information_overload,positive,0.027401174767264915,5.688326633057628e-07,4.866196828215003
+information_overload,neutral,0.010200257293214613,0.5492466524198516,-0.12375824314299269
+information_overload,common,0.0,1.0,-21.334335066508462
+oversimplification,interdisciplinary,0.0,1.0,-140.1534670010027
+oversimplification,subject to geographical variability,0.0,1.0,-2142.4947455288207
+information_overload,subject to geographical variability,0.0,1.0,-2311.437925126345
+information_overload,interdisciplinary,0.0,1.0,-132.67080207969187
+information_overload,subject to time variability,0.0,1.0,-780.336412321502
+oversimplification,neutral,0.0,0.9894954565258749,-2.3078212001944314
+oversimplification,positive,0.0,1.0,-9.137575347737885
+oversimplification,common,0.0,1.0,-16.535022122601006
+explanation_length,subject to time variability,0.0,1.0,-1920.7820780668671
+sentiment_score_nn,subject to time variability,0.0,1.0,-158.18726494691572
+framing_effect,subject to time variability,0.0,1.0,-974.2113444339201
+framing_effect,interdisciplinary,0.0,1.0,-204.63192552526124
+explanation_length,interdisciplinary,0.0,1.0,-131.61330658223994
+subjectivity_score_nn,subject to geographical variability,0.0,1.0,-944.6765491872741
+subjectivity_score_nn,interdisciplinary,0.0,1.0,-58.840410781607304
+subjectivity_score_nn,subject to time variability,0.0,1.0,-367.1343964611683
+explanation_length,subject to geographical variability,0.0,1.0,-6347.143886197837
+gunning_fog,positive,0.0,1.0,-10.571757105177067
+gunning_fog,subject to geographical variability,0.0,1.0,-8167.294878590812
+gunning_fog,interdisciplinary,0.0,1.0,-396.8224622901676
+gunning_fog,subject to time variability,0.0,1.0,-2229.6662917050844
+explanation_length,common,0.0,0.9991962425312042,-3.1545398777958793
+sentiment_score_nn,subject to geographical variability,0.0,1.0,-531.782331888999
+sentiment_score_nn,interdisciplinary,0.0,1.0,-21.090580942027238
+subjectivity_score_nn,conceptually dense,0.0,0.9815685132686248,-2.0872784799754514
+framing_effect,conceptually dense,0.0,1.0,-20.332549519384653
+framing_effect,common,0.0,1.0,-24.059027596241176
+framing_effect,positive,0.0,1.0,-14.032475360731707
+framing_effect,subject to geographical variability,0.0,1.0,-2943.0064546651392
+oversimplification,subject to time variability,0.0,1.0,-766.0578359734342

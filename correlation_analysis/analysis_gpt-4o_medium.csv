@@ -1,0 +1,6 @@
+metric,feature,correlation,p_value,statistic
+subjectivity_score_nn,positive,0.7364570059387273,0.0,4037.0442627983375
+subjectivity_score_nn,negative,0.6289318046858359,0.0,2692.8133603062333
+explanation_length,common,0.5232050139519454,0.0,1778.5765874834763
+explanation_length,positive,0.19486674695673506,0.0,237.0998945963085
+explanation_length,negative,0.18330358235053212,0.0,209.5554582986983

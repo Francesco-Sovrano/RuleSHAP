@@ -1,0 +1,12 @@
+,rule,coef
+9,interdisciplinary,-2.4253857
+5,positive,1.0022273
+8,subject to geographical variability,0.801237
+10,subject to time variability,0.4738962
+4,unambiguous,0.15500824
+0,conceptually dense,0.11388403
+6,negative,-0.109277986
+1,technically complicated,-0.10393578
+7,neutral,0.067901656
+2,common,-0.047491986
+3,socially controversial,-0.042842686

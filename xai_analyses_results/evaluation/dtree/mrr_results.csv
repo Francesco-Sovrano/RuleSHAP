@@ -15,3 +15,7 @@ llama3.1,easy,0.0,0.0,0.0
 llama3.1,medium,0.0,0.0,0.0
 llama3.1,hard,0.0,0.0,0.0
 llama3.1,all,0.0,0.0,0.0
+llama3.1:70b,easy,0.0,0.0,0.0
+llama3.1:70b,medium,0.0,0.0,0.0
+llama3.1:70b,hard,0.0,0.0,0.0
+llama3.1:70b,all,0.0,0.0,0.0
