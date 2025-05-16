@@ -1,8 +1,8 @@
-# RuleSHAP: Exposing Injected Bias in LLM Explanations via Text-to-Ordinal Mapping and SHAP-driven Global Rule Extraction
+# Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP
 
 This repository contains the official code for the paper:
 
-**“RuleSHAP: Exposing Injected Bias in LLM Explanations via Text-to-Ordinal Mapping and SHAP-driven Global Rule Extraction.”**
+**“Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP”**
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This repository contains the official code for the paper:
 
 ---
 
-## Introduction
+## Brief Introduction
 
 The UN’s Sustainable Development Goals (SDGs) provide a framework for addressing critical global challenges. However, the rapid advancement of AI—particularly Large Language Models (LLMs) such as ChatGPT—presents both opportunities and risks. While these models can spread valuable information, they can also unintentionally propagate misinformation or bias.
 
@@ -32,11 +32,7 @@ This repository demonstrates the end-to-end process of:
 
 ## Abstract
 
-The UN's Sustainable Development Goals (SDGs) serve as a blueprint for tackling global issues, while AI's advancement presents both opportunities and risks. Generative AI systems, like ChatGPT, can help spread information but also misinformation and biases, potentially undermining the SDGs. Detecting these biases is challenging for large language models (LLMs) usually operate with non-numerical inputs/outputs.
-
-To address this, we show a bias detection methodology grounded in Explainable Artificial Intelligence (XAI). Our approach maps texts to numerical scores capturing cognitive biases linked to misinformation, enabling global XAI tools like SHAP and RuleFit to analyse LLM-generated content. We then examine the effects of deliberately injecting biases via system instructions in state-of-the-art LLMs, including ChatGPT-4 and LLaMA 3.1, revealing limitations in current XAI methods. Among these methods, SHAP comes close to detecting injected biases but cannot express them as actionable rules.
-
-Hence, we introduce **RuleSHAP**, a new algorithm merging SHAP and RuleFit, increasing bias detection by 21% (MRR@1). This allows us to analyse LLMs on topics like climate action (SDG 13), well-being (SDG 3), and gender equality (SDG 5).
+Generative AI systems can help spread information but also misinformation and biases, potentially undermining the UN Sustainable Development Goals (SDGs). Explainable AI (XAI) aims to reveal the inner workings of AI systems and expose misbehaviours or biases. However, current XAI tools, built for simpler models, struggle to handle the non-numerical nature of large language models (LLMs). This paper examines the effectiveness of global XAI methods, such as rule-extraction algorithms and SHAP, in detecting bias in LLMs. To do so, we first show a text-to-ordinal mapping strategy to convert non-numerical inputs/outputs into numerical features, enabling these tools to identify (some) misinformation-related biases in LLM-generated content. Then, we inject non-linear biases of varying complexity (univariate, conjunctive, and non-convex) into widespread LLMs like ChatGPT and Llama via system instructions, using global XAI methods to detect them. This way, we found that RuleFit struggles with conjunctive and non-convex biases, while SHAP can approximate conjunctive biases but cannot express them as actionable rules. Hence, we introduce RuleSHAP, a global rule extraction algorithm combining SHAP and RuleFit to detect more non-univariate biases, improving injected bias detection over RuleFit by +94% (MRR@1) on average.
 
 ---
 
@@ -69,14 +65,17 @@ To install Llama 3.1 using Ollama, follow these steps:
        ```
      - This command will download and install Ollama on your system.
 
-2. **Install the Llama 3.1 Model**
+2. **Install the Llama 3.1 Models**
 
    - Open your terminal (or Command Prompt on Windows).
-   - Run the following command to download and set up the Llama 3.1 model:
+   - Run the following commands to download and set up the Llama 3.1 models:
      ```bash
      ollama run llama3.1
      ```
-   - The initial execution will download the model, which may take some time depending on your internet speed. Subsequent runs will utilize the locally stored model.
+    ```bash
+     ollama run llama3.1:70b
+     ```
+   - The initial execution will download the model, which may take some time depending on your internet speed. Subsequent runs will use the locally stored model.
 
 3. **Verify the Installation**
 
