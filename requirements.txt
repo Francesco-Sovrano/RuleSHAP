@@ -4,7 +4,7 @@ more_itertools
 ollama
 openai==1.70
 matplotlib
-textstat==0.7.5
+textstat==0.7.12
 textblob==0.19
 nltk
 spacy==3.8.5

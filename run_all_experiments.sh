@@ -255,3 +255,27 @@ python 12_input_output_correlation_analysis.py --model llama3.1:70b --difficulty
 python 13_llm_estimate_proxy_metrics_correlation_analysis.py
 
 python3 14_statistically_test_ruleshap_improvements_over_rulefit.py
+
+python 15_rule_guided_mitigation.py \
+	--model llama3.1 --difficulty baseline \
+	--metric subjectivity_score_nn --direction decrease \
+	--rule_index 0 \
+	--use_shap_in_xgb --use_shap_in_lasso
+
+python 15_rule_guided_mitigation.py \
+	--model llama3.1 --difficulty baseline \
+	--metric subjectivity_score_nn --direction decrease \
+	--rule_index 7 \
+	--use_shap_in_xgb --use_shap_in_lasso
+
+python 15_rule_guided_mitigation.py \
+	--model llama3.1 --difficulty baseline \
+	--metric gunning_fog --direction decrease \
+	--rule_index 4 \
+	--use_shap_in_xgb --use_shap_in_lasso
+
+python 15_rule_guided_mitigation.py \
+	--model llama3.1 --difficulty baseline \
+	--metric gunning_fog --direction decrease \
+	--rule_index 5 \
+	--use_shap_in_xgb --use_shap_in_lasso
