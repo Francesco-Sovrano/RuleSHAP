@@ -1,0 +1,7 @@
+group,encoder,threshold,n_original_topics,n_retained_topics,retention_ratio
+llama3.1,all-MiniLM-L6-v2,0.85,10498,8499,0.8095827776719375
+llama3.1,all-MiniLM-L6-v2,0.9,10498,10441,0.9945703943608306
+llama3.1,all-MiniLM-L6-v2,0.95,10498,10478,0.9980948752143265
+llama3.1,all-mpnet-base-v2,0.85,10498,8305,0.791103067250905
+llama3.1,all-mpnet-base-v2,0.9,10498,9849,0.9381787007048962
+llama3.1,all-mpnet-base-v2,0.95,10498,10456,0.9959992379500857

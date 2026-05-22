@@ -9,6 +9,7 @@ cache/*.csv
 abstract_model_io/*.pkl
 abstract_model_io/*.csv
 old/
+*.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

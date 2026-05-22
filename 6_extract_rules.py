@@ -9,12 +9,10 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 # import re
 import pandas as pd
 import numpy as np
-import json
-
 from ruleshap import RuleSHAP
 # from rulefit import RuleFit
 
-from lib import create_cache, load_cache
+from lib import load_cache
 
 ################################################################
 

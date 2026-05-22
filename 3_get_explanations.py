@@ -1,11 +1,9 @@
 import os
 import json
-import re
 import pandas as pd
 from lib import *
 # import ast
 from collections import defaultdict
-import csv
 
 import argparse
 parser = argparse.ArgumentParser(description="Provide model")
@@ -123,7 +121,7 @@ for difficulty, system_instruction_dict in difficulty_system_instruction_dict.it
 		system_instruction_topic_list_dict[i].append(t)
 	# print(list(system_instruction_topic_list_dict.keys()))
 
-	print(f"<{args.model}>Difficulty {difficulty}: {len(system_instruction_topic_list_dict)} different biases")
+	print(f"<{args.model}>Difficulty {difficulty}: {len(system_instruction_topic_list_dict)} different behaviour instructions")
 
 	for system_instruction, domain_topic_list in system_instruction_topic_list_dict.items():
 		domain_list, topic_list = zip(*domain_topic_list)

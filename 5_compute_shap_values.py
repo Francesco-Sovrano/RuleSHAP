@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 from numba import njit, types
-from numba.typed import Dict, List
+from numba.typed import Dict
 
-from scipy.stats import pearsonr, spearmanr
+from scipy.stats import spearmanr
 
 # from sklearn.cluster import KMeans
 # from sklearn_extra.cluster import KMedoids
@@ -21,7 +21,7 @@ from scipy.stats import pearsonr, spearmanr
 import shap
 from ruleshap import rand_int
 
-from lib import create_cache, load_cache
+from lib import create_cache
 
 ################################################################
 

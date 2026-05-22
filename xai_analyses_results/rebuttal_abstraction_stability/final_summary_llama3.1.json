@@ -1,0 +1,15 @@
+{
+  "model": "llama3.1",
+  "subset_size": 80,
+  "n_repeats": 2,
+  "variants": [
+    "canonical",
+    "web_focus"
+  ],
+  "raw_path": "xai_analyses_results/rebuttal_abstraction_stability/raw_scores_llama3.1.csv",
+  "summary_path": "xai_analyses_results/rebuttal_abstraction_stability/summary_llama3.1.csv",
+  "pairwise_path": "xai_analyses_results/rebuttal_abstraction_stability/pairwise_llama3.1.csv",
+  "aggregate_exact_consensus_rate": 0.875,
+  "aggregate_within_one_consensus_rate": 0.9977272727272727,
+  "aggregate_pairwise_spearman": 0.7029604109578601
+}

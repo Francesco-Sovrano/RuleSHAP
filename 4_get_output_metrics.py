@@ -9,9 +9,7 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 # import re
 import pandas as pd
 import numpy as np
-import json
-
-from textstat import flesch_reading_ease, gunning_fog, smog_index, automated_readability_index, coleman_liau_index
+from textstat import gunning_fog
 from textblob import TextBlob
 from transformers import pipeline
 import re
@@ -118,9 +116,9 @@ def estimate_framing_effect(text_list):
 	score_list, explanation_list = zip(*map(get_score_from_llm_output, output_list))
 	return score_list
 
-def estimate_oversemplification(text_list):
+def estimate_oversimplification(text_list):
 	bias_description = "Critically assess the provided explanation for signs of oversimplification. Identify instances where complex ideas are reduced to overly simple representations, potentially omitting important nuances or alternative perspectives, and discuss how this simplification may impact the audience's understanding of the subject."
-	system_instruction = base_prompt_template.format(score_type='oversemplification', unique_description=bias_description)
+	system_instruction = base_prompt_template.format(score_type='oversimplification', unique_description=bias_description)
 	output_list = instruct_model(text_list, system_instruction=system_instruction, **llm_options)
 	score_list, explanation_list = zip(*map(get_score_from_llm_output, output_list))
 	return score_list
@@ -216,7 +214,7 @@ metrics_dict = {
 llm_as_a_judge_dict = {
 	'framing_effect': estimate_framing_effect,
 	'information_overload': estimate_information_overload,
-	'oversimplification': estimate_oversemplification,
+	'oversimplification': estimate_oversimplification,
 }
 
 # Load the CSV files
@@ -225,11 +223,11 @@ scores_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_scores_{"_".join(map(
 
 explanations_df = pd.read_csv(os.path.join(csv_file_dir, f'topic_explanations_{difficulty}_{"_".join(map(lambda x: f"{x[0]}-{x[1]}", llm_options.items()))}.csv'))
 
-# LLM-as-a-judge: the LLM tells us whether there's a bias or not
+# LLM-as-a-judge: estimate whether a behaviour is present
 for metric, fn in llm_as_a_judge_dict.items():
 	explanations_df[metric] = fn(explanations_df['explanation'].tolist())
 
-# Proxy metrics: we use proxy metrics to detect the presence of a bias
+# Proxy metrics: use independent metrics to detect behaviour-related signals
 for metric, fn in metrics_dict.items():
 	explanations_df[metric] = explanations_df['explanation'].apply(fn)
 

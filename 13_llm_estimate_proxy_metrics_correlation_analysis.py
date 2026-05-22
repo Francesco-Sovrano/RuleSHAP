@@ -9,7 +9,7 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 import pandas as pd
 import numpy as np
 
-from scipy.stats import pearsonr, spearmanr
+from scipy.stats import spearmanr
 
 ################################################################
 

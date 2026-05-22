@@ -9,14 +9,10 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 # import re
 import pandas as pd
 import numpy as np
-import json
-
 from rulefit import RuleFit
 # from imodels import SkopeRulesClassifier, BayesianRuleSetClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor, _tree
-
-from lib import create_cache, load_cache
 
 ################################################################
 

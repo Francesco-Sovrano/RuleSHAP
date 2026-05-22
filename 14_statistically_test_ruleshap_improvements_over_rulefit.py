@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import ast
-from scipy.stats import mannwhitneyu, wilcoxon
+from scipy.stats import wilcoxon
 
 def flatten_rr_column(df_col):
 	flat_list = []

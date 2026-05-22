@@ -1,10 +1,8 @@
 import os
-import json
 import re
-import pandas as pd
 from more_itertools import unique_everseen
 from lib import *
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 from numba import njit
 import numpy as np
 import csv

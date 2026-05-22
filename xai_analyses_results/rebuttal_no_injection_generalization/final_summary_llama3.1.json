@@ -1,0 +1,17 @@
+{
+  "model": "llama3.1",
+  "methods": [
+    "ruleshap",
+    "rulefit"
+  ],
+  "metrics": [
+    "explanation_length",
+    "subjectivity_score_nn",
+    "gunning_fog",
+    "sentiment_score_nn"
+  ],
+  "results_path": "xai_analyses_results/rebuttal_no_injection_generalization/generalization_llama3.1.csv",
+  "summary_path": "xai_analyses_results/rebuttal_no_injection_generalization/summary_llama3.1.csv",
+  "mean_direction_consistency_rate": 0.97,
+  "mean_abs_delta": 95.06008295935109
+}

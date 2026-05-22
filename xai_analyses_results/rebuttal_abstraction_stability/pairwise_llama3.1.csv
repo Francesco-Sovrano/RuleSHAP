@@ -1,0 +1,67 @@
+model,score_type,variant_a,repeat_a,variant_b,repeat_b,n_topics,exact_agreement,within_one_agreement,spearman,mean_abs_diff
+llama3.1,common,canonical,0,canonical,1,80,1.0,1.0,0.9999999999999998,0.0
+llama3.1,common,canonical,0,web_focus,0,80,0.5875,1.0,0.7279230344648301,0.4125
+llama3.1,common,canonical,0,web_focus,1,80,0.5875,1.0,0.7279230344648301,0.4125
+llama3.1,common,canonical,1,web_focus,0,80,0.5875,1.0,0.7279230344648301,0.4125
+llama3.1,common,canonical,1,web_focus,1,80,0.5875,1.0,0.7279230344648301,0.4125
+llama3.1,common,web_focus,0,web_focus,1,80,1.0,1.0,0.9999999999999999,0.0
+llama3.1,conceptually dense,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,conceptually dense,canonical,0,web_focus,0,80,0.95,1.0,0.780577476271659,0.05
+llama3.1,conceptually dense,canonical,0,web_focus,1,80,0.95,1.0,0.780577476271659,0.05
+llama3.1,conceptually dense,canonical,1,web_focus,0,80,0.95,1.0,0.780577476271659,0.05
+llama3.1,conceptually dense,canonical,1,web_focus,1,80,0.95,1.0,0.780577476271659,0.05
+llama3.1,conceptually dense,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,interdisciplinary,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,interdisciplinary,canonical,0,web_focus,0,80,0.975,1.0,0.5699951883726148,0.025
+llama3.1,interdisciplinary,canonical,0,web_focus,1,80,0.975,1.0,0.5699951883726148,0.025
+llama3.1,interdisciplinary,canonical,1,web_focus,0,80,0.975,1.0,0.5699951883726148,0.025
+llama3.1,interdisciplinary,canonical,1,web_focus,1,80,0.975,1.0,0.5699951883726148,0.025
+llama3.1,interdisciplinary,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,negative,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,negative,canonical,0,web_focus,0,80,0.825,1.0,0.8526952452134818,0.175
+llama3.1,negative,canonical,0,web_focus,1,80,0.825,1.0,0.8526952452134818,0.175
+llama3.1,negative,canonical,1,web_focus,0,80,0.825,1.0,0.8526952452134818,0.175
+llama3.1,negative,canonical,1,web_focus,1,80,0.825,1.0,0.8526952452134818,0.175
+llama3.1,negative,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,neutral,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,neutral,canonical,0,web_focus,0,80,0.9125,1.0,0.8355706341226141,0.0875
+llama3.1,neutral,canonical,0,web_focus,1,80,0.9125,1.0,0.8355706341226141,0.0875
+llama3.1,neutral,canonical,1,web_focus,0,80,0.9125,1.0,0.8355706341226141,0.0875
+llama3.1,neutral,canonical,1,web_focus,1,80,0.9125,1.0,0.8355706341226141,0.0875
+llama3.1,neutral,web_focus,0,web_focus,1,80,1.0,1.0,0.9999999999999998,0.0
+llama3.1,positive,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,positive,canonical,0,web_focus,0,80,0.8875,1.0,0.9119992515585592,0.1125
+llama3.1,positive,canonical,0,web_focus,1,80,0.8875,1.0,0.9119992515585592,0.1125
+llama3.1,positive,canonical,1,web_focus,0,80,0.8875,1.0,0.9119992515585592,0.1125
+llama3.1,positive,canonical,1,web_focus,1,80,0.8875,1.0,0.9119992515585592,0.1125
+llama3.1,positive,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,socially controversial,canonical,0,canonical,1,80,1.0,1.0,0.9999999999999998,0.0
+llama3.1,socially controversial,canonical,0,web_focus,0,80,0.85,0.975,0.821329944246872,0.175
+llama3.1,socially controversial,canonical,0,web_focus,1,80,0.85,0.975,0.821329944246872,0.175
+llama3.1,socially controversial,canonical,1,web_focus,0,80,0.85,0.975,0.821329944246872,0.175
+llama3.1,socially controversial,canonical,1,web_focus,1,80,0.85,0.975,0.821329944246872,0.175
+llama3.1,socially controversial,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,subject to geographical variability,canonical,0,canonical,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to geographical variability,canonical,0,web_focus,0,80,1.0,1.0,0.0,0.0
+llama3.1,subject to geographical variability,canonical,0,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to geographical variability,canonical,1,web_focus,0,80,1.0,1.0,0.0,0.0
+llama3.1,subject to geographical variability,canonical,1,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to geographical variability,web_focus,0,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,canonical,0,canonical,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,canonical,0,web_focus,0,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,canonical,0,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,canonical,1,web_focus,0,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,canonical,1,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,subject to time variability,web_focus,0,web_focus,1,80,1.0,1.0,0.0,0.0
+llama3.1,technically complicated,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,technically complicated,canonical,0,web_focus,0,80,0.675,1.0,0.7153672542876334,0.325
+llama3.1,technically complicated,canonical,0,web_focus,1,80,0.675,1.0,0.7153672542876334,0.325
+llama3.1,technically complicated,canonical,1,web_focus,0,80,0.675,1.0,0.7153672542876334,0.325
+llama3.1,technically complicated,canonical,1,web_focus,1,80,0.675,1.0,0.7153672542876334,0.325
+llama3.1,technically complicated,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0
+llama3.1,unambiguous,canonical,0,canonical,1,80,1.0,1.0,1.0,0.0
+llama3.1,unambiguous,canonical,0,web_focus,0,80,0.9625,1.0,0.8833887522664292,0.0375
+llama3.1,unambiguous,canonical,0,web_focus,1,80,0.9625,1.0,0.8833887522664292,0.0375
+llama3.1,unambiguous,canonical,1,web_focus,0,80,0.9625,1.0,0.8833887522664292,0.0375
+llama3.1,unambiguous,canonical,1,web_focus,1,80,0.9625,1.0,0.8833887522664292,0.0375
+llama3.1,unambiguous,web_focus,0,web_focus,1,80,1.0,1.0,1.0,0.0

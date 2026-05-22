@@ -1,143 +1,295 @@
-# Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP
+# Can Global XAI Methods Reveal Injected Behaviours in LLMs?
 
-This repository contains the official code for the paper:
+Official code and data for the paper **"Can Global XAI Methods Reveal Injected Behaviours in LLMs? SHAP vs Rule Extraction vs RuleSHAP"**.
 
-**“Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP”**
+The project evaluates whether global explainability methods can detect deliberately injected misinformation-related behaviours in large language model outputs. It converts text prompts and model responses into ordinal features, computes SHAP explanations, extracts global rules, and compares RuleSHAP against RuleFit, decision trees, linear models, SHAP-only rankings, and GELPE.
 
-## Table of Contents
+## Contents
 
-1. [Introduction](#introduction)
-2. [Abstract](#abstract)
-3. [Requirements & Installation](#requirements--installation)
-4. [Usage](#usage)
-5. [Experiments & Results](#experiments--results)
-6. [API Key Setup](#api-key-setup)
+- [Paper](#paper)
+- [Project overview](#project-overview)
+- [Repository layout](#repository-layout)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Model setup](#model-setup)
+- [Run the experiments](#run-the-experiments)
+- [Optional and rebuttal experiments](#optional-and-rebuttal-experiments)
+- [Outputs](#outputs)
+- [Troubleshooting](#troubleshooting)
+- [Citation](#citation)
 
----
 
-## Brief Introduction
+## Paper
 
-The UN’s Sustainable Development Goals (SDGs) provide a framework for addressing critical global challenges. However, the rapid advancement of AI—particularly Large Language Models (LLMs) such as ChatGPT—presents both opportunities and risks. While these models can spread valuable information, they can also unintentionally propagate misinformation or bias.
+Francesco Sovrano. 2026. **Can Global XAI Methods Reveal Injected Behaviours in LLMs? SHAP vs Rule Extraction vs RuleSHAP.** In *Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining* (KDD '26), ACM, Jeju, Republic of Korea, 12 pages. DOI: `10.1145/3770855.3818093`
 
-**RuleSHAP** is our novel methodology to detect and express injected biases in LLM-generated explanations using:
-- **Text-to-Ordinal Mapping**: Converts textual content into numerical scores related to specific cognitive biases.
-- **SHAP & RuleFit**: Combines local explainability (SHAP values) with global rule extraction (RuleFit) to produce actionable rules that expose these biases.
+## Project overview
 
-This repository demonstrates the end-to-end process of:
-1. Injecting biases into LLMs (e.g., GPT-4, LLaMA 3.1) via system instructions.
-2. Using SHAP to analyse textual outputs.
-3. Extracting global rules with **RuleSHAP** to detect and quantify biases.
+Generative AI systems can spread useful information, but they can also amplify misleading or misinformative behaviours. Standard global XAI methods are typically designed for structured numeric data, not raw LLM input and output text. This repository addresses that gap with a text-to-ordinal workflow:
 
----
+1. Build a topic set around Sustainable Development Goal domains.
+2. Score each topic along interpretable ordinal dimensions, such as commonality, positivity, controversy, and interdisciplinarity.
+3. Generate LLM explanations under controlled behaviour-injection instructions.
+4. Convert responses into output metrics, such as explanation length, subjectivity, sentiment, and readability.
+5. Compute SHAP values over the ordinal feature space.
+6. Extract global rules with RuleSHAP and compare them against baseline explainability methods.
 
-## Abstract
+RuleSHAP combines SHAP-guided feature attribution with rule extraction so that non-univariate injected behaviours can be expressed as actionable rules.
 
-Generative AI systems can help spread information but also misinformation and biases, potentially undermining the UN Sustainable Development Goals (SDGs). Explainable AI (XAI) aims to reveal the inner workings of AI systems and expose misbehaviours or biases. However, current XAI tools, built for simpler models, struggle to handle the non-numerical nature of large language models (LLMs). This paper examines the effectiveness of global XAI methods, such as rule-extraction algorithms and SHAP, in detecting bias in LLMs. To do so, we first show a text-to-ordinal mapping strategy to convert non-numerical inputs/outputs into numerical features, enabling these tools to identify (some) misinformation-related biases in LLM-generated content. Then, we inject non-linear biases of varying complexity (univariate, conjunctive, and non-convex) into widespread LLMs like ChatGPT and Llama via system instructions, using global XAI methods to detect them. This way, we found that RuleFit struggles with conjunctive and non-convex biases, while SHAP can approximate conjunctive biases but cannot express them as actionable rules. Hence, we introduce RuleSHAP, a global rule extraction algorithm combining SHAP and RuleFit to detect more non-univariate biases, improving injected bias detection over RuleFit by +94% (MRR@1) on average.
+## Repository layout
 
----
+```text
+.
+├── 1_extract_topics.py
+├── 2_get_internal_scores.py
+├── 3_get_explanations.py
+├── 4_get_output_metrics.py
+├── 5_compute_shap_values.py
+├── 6_extract_rules.py
+├── 7_extract_rules_with_baselines.py
+├── 7_extract_rules_with_gelpe.py
+├── 8_evaluate_ruleshap.py
+├── 9_evaluate_rulefit.py
+├── 10_evaluate_dtree.py
+├── 11_evaluate_shap.py
+├── 12_input_output_correlation_analysis.py
+├── 13_llm_estimate_proxy_metrics_correlation_analysis.py
+├── 14_statistically_test_ruleshap_improvements_over_rulefit.py
+├── 15_rule_guided_mitigation.py
+├── 16_evaluate_no_injection_generalization.py
+├── 17_evaluate_shap_imputation_robustness.py
+├── 18_evaluate_gelpe.py
+├── 19_evaluate_abstraction_stability.py
+├── 20_evaluate_dedup_sensitivity.py
+├── gelpe.py
+├── lib.py
+├── ruleshap.py
+├── xai_eval_utils.py
+├── requirements.txt
+├── setup.sh
+├── run_all_experiments.sh
+└── run_rebuttal_experiments.sh
+```
 
-## Requirements & Installation
+Key modules:
 
-- **Operating System**: Tested on **macOS 15.3** (or similar)  
-- **Python**: Requires **Python 3.9**
+- `ruleshap.py`: RuleSHAP implementation and SHAP-weighted linear model utilities.
+- `gelpe.py`: GELPE baseline utilities.
+- `lib.py`: shared caching and LLM-call helpers.
+- `xai_eval_utils.py`: evaluation helpers for reciprocal rank, rule matching, and fidelity summaries.
 
-### Installation Steps
+## Requirements
 
-Run the provided setup script:
- ```bash
- chmod +x setup.sh
- ./setup.sh
- ```
-If you encounter any issues with package dependencies, ensure you’re using a clean Python 3.9 environment (e.g., via `conda` or `venv`).
+The project was tested with:
 
-To install Llama 3.1 using Ollama, follow these steps:
+- macOS 15.3
+- Python 3.9
 
-1. **Download and Install Ollama**
+Core Python packages are listed in `requirements.txt`. The experiment pipeline also requires:
 
-   - **For macOS and Windows:**
-     - Visit the [Ollama website](https://ollama.com/download) and download the installer suitable for your operating system.
-     - Run the installer and follow the on-screen instructions to complete the installation.
+- an OpenAI API key when running GPT-based models
+- Ollama when running local Llama models
+- spaCy and NLTK data installed by `setup.sh`
 
-   - **For Linux:**
-     - Open your terminal and execute the following command:
-       ```bash
-       curl -fsSL https://ollama.com/install.sh | sh
-       ```
-     - This command will download and install Ollama on your system.
+The full experiment suite is compute intensive. Running every model and difficulty level will create many CSV, pickle, and figure files.
 
-2. **Install the Llama 3.1 Models**
+## Installation
 
-   - Open your terminal (or Command Prompt on Windows).
-   - Run the following commands to download and set up the Llama 3.1 models:
-     ```bash
-     ollama run llama3.1
-     ```
-    ```bash
-     ollama run llama3.1:70b
-     ```
-   - The initial execution will download the model, which may take some time depending on your internet speed. Subsequent runs will use the locally stored model.
+Create the environment and install dependencies with the provided setup script:
 
-3. **Verify the Installation**
+```bash
+chmod +x setup.sh
+./setup.sh
+```
 
-   - To ensure that Llama 3.1 is installed correctly, you can run a simple test:
-     ```bash
-     ollama run llama3.1 "Hello, Llama!"
-     ```
-   - If the installation is successful, the model will generate a response to the input prompt.
+The script creates a local `.env` virtual environment, installs Python dependencies, downloads the `en_core_web_md` spaCy model, and installs required NLTK resources.
 
-**Note:** Ensure your system meets the necessary hardware requirements for running Llama 3.1. For instance, the 8B model typically requires at least 32 GB of RAM and 8 GB of VRAM for optimal performance. ([github.com](https://github.com/kamalraj0611/llama-3-local-setup?utm_source=chatgpt.com))
+To activate the environment manually:
 
-For more detailed information and troubleshooting, refer to the [Ollama GitHub repository](https://github.com/ollama/ollama). 
+```bash
+source .env/bin/activate
+```
 
----
+## Model setup
 
-## Usage
+### OpenAI models
 
-1. **Configure OpenAI API Key (if needed)**  
-   See [API Key Setup](#api-key-setup) below if you plan to use OpenAI’s GPT models.
+Set `OPENAI_API_KEY` before running scripts that call GPT models:
 
-2. **Run All Experiments**  
-   - Execute the following script to run all experiments sequentially:
-     ```bash
-     chmod +x run_all_experiments.sh
-     ./run_all_experiments.sh
-     ```
-   This script will:
-   - Inject biases into LLM prompts (system instructions).
-   - Generate LLM responses.
-   - Perform text-to-ordinal mappings.
-   - Calculate SHAP values.
-   - Extract global rules via RuleFit (RuleSHAP).
+```bash
+export OPENAI_API_KEY="your-api-key"
+```
 
-3. **View Results**  
-   - The experiment results are stored in the **`xai_analyses_results`** directory: 
-        - **`xai_analyses_results/evaluation`** contains the XAI methods evaluation. 
-        - **`xai_analyses_results/rules`** contains the rules extracted by RuleSHAP.
-        - **`xai_analyses_results/summary_plot`** contains the global SHAP results.
-        - **`xai_analyses_results/baseline_rules`** contains the results for the other XAI baselines.
-   - Look for `.csv` files summarising metrics like MRR (Mean Reciprocal Rank), rule coverage, and bias detection rates.
+The code reads the key from the environment.
 
----
+### Ollama models
 
-## API Key Setup
+Install Ollama, then pull the local Llama models used by the experiments:
 
-If you plan to use OpenAI’s GPT-based models (e.g., `GPT-3.5`, `GPT-4`) in these experiments, you’ll need an API key.
+```bash
+ollama run llama3.1
+ollama run llama3.1:70b
+```
 
-1. **Sign Up / Log In**  
-   - Go to [OpenAI’s platform](https://platform.openai.com/signup/) and log in to your account.
+Verify the installation with:
 
-2. **Get Your API Key**  
-   - Navigate to **API Keys** ([link](https://platform.openai.com/api-keys)).
-   - Click **Create new secret key** and copy it.
+```bash
+ollama run llama3.1 "Hello, Llama!"
+```
 
-3. **Use It in Python**  
-   - Set an environment variable in your terminal:
-     ```bash
-     export OPENAI_API_KEY="your-secret-api-key"
-     ```
-   - For Windows (CMD prompt):
-     ```cmd
-     set OPENAI_API_KEY="your-secret-api-key"
-     ```
+## Run the experiments
 
-The code will detect your `OPENAI_API_KEY` automatically from the environment variable.
+### Full pipeline
+
+Run the complete experiment workflow with:
+
+```bash
+chmod +x run_all_experiments.sh
+./run_all_experiments.sh
+```
+
+The runner performs the main pipeline across supported models and difficulty levels:
+
+1. Extract SDG-related topics.
+2. Estimate ordinal topic scores.
+3. Generate LLM explanations under baseline, easy, medium, and hard behaviour-injection settings.
+4. Compute output metrics for generated explanations.
+5. Compute SHAP values and summary plots.
+6. Extract RuleSHAP rules.
+7. Extract baseline rules with decision trees, linear models, RuleFit, and GELPE.
+8. Evaluate RuleSHAP, RuleFit, decision trees, SHAP feature rankings, and GELPE.
+9. Run correlation and statistical comparison analyses.
+10. Run targeted mitigation case studies.
+
+### Manual step-by-step run
+
+Use the numbered scripts when you want to run a smaller subset. Example for one model and difficulty level:
+
+```bash
+python 1_extract_topics.py
+python 2_get_internal_scores.py --model gpt-4o-mini
+python 3_get_explanations.py --model gpt-4o-mini
+python 4_get_output_metrics.py --model gpt-4o-mini --difficulty hard
+python 5_compute_shap_values.py --model gpt-4o-mini --difficulty hard --fast_shap_estimate
+python 6_extract_rules.py --model gpt-4o-mini --difficulty hard --use_shap_in_xgb --use_shap_in_lasso
+python 8_evaluate_ruleshap.py --use_shap_in_xgb --use_shap_in_lasso
+```
+
+Baseline extraction and evaluation can be run separately:
+
+```bash
+python 7_extract_rules_with_baselines.py --model gpt-4o-mini --difficulty hard
+python 9_evaluate_rulefit.py
+python 10_evaluate_dtree.py
+python 11_evaluate_shap.py
+```
+
+GELPE extraction and evaluation:
+
+```bash
+python 7_extract_rules_with_gelpe.py --model gpt-4o-mini --difficulty hard
+python 18_evaluate_gelpe.py
+```
+
+## Optional and rebuttal experiments
+
+Run the rebuttal-oriented experiments with:
+
+```bash
+chmod +x run_rebuttal_experiments.sh
+./run_rebuttal_experiments.sh llama3.1
+```
+
+The script runs:
+
+- `16_evaluate_no_injection_generalization.py`: held-out generalization of rules in the no-injection setting.
+- `17_evaluate_shap_imputation_robustness.py`: nearest-neighbor SHAP imputation robustness diagnostics.
+- `18_evaluate_gelpe.py`: GELPE baseline evaluation after GELPE rule extraction.
+- `19_evaluate_abstraction_stability.py`: abstraction scoring stability under repeated and paraphrased prompts.
+- `20_evaluate_dedup_sensitivity.py`: sensitivity of topic deduplication to encoder and threshold choices.
+
+### Targeted mitigation case study
+
+Run targeted mitigation directly with:
+
+```bash
+python 15_rule_guided_mitigation.py \
+  --model llama3.1 \
+  --difficulty baseline \
+  --metric subjectivity_score_nn \
+  --direction decrease \
+  --rule_index 0 \
+  --use_shap_in_xgb \
+  --use_shap_in_lasso
+```
+
+## Outputs
+
+Generated files are written under these directories:
+
+- `abstract_model_io/`: topic scores, generated explanations, output metrics, and cached SHAP statistics.
+- `xai_analyses_results/summary_plot/`: SHAP summary plots.
+- `xai_analyses_results/rules/`: RuleSHAP rules.
+- `xai_analyses_results/baseline_rules/`: baseline rules from RuleFit, decision trees, linear models, and GELPE.
+- `xai_analyses_results/evaluation/`: method-level evaluation summaries.
+- `xai_analyses_results/case_study_mitigation/`: mitigation case-study outputs.
+- `xai_analyses_results/rebuttal_*`: optional diagnostic and rebuttal experiment outputs.
+- `correlation_analysis/`: input-output and LLM-as-a-judge correlation analyses.
+
+Common evaluation files include:
+
+- `rule_counts.csv`
+- `mrr_results.csv`
+- `rr_results.csv`
+- `topk_fidelity_detail.csv`
+- `topk_fidelity_summary.csv`
+- `topk_fidelity_overall.csv`
+
+## Troubleshooting
+
+### Missing API key
+
+If OpenAI calls fail, confirm that `OPENAI_API_KEY` is exported in the same shell where you run the scripts.
+
+### Ollama model not found
+
+Run the model once with `ollama run <model-name>` before starting the experiment pipeline. The first run downloads the model locally.
+
+### spaCy model not found
+
+Run:
+
+```bash
+python -m spacy download en_core_web_md
+```
+
+### Missing intermediate CSV or pickle files
+
+Most numbered scripts depend on outputs from earlier steps. For example, `6_extract_rules.py` expects SHAP statistics from `5_compute_shap_values.py`, and the evaluation scripts expect extracted rule CSV files.
+
+### Dependency conflicts
+
+Use a clean Python 3.9 virtual environment. Recreate `.env` if package versions have drifted:
+
+```bash
+rm -rf .env
+./setup.sh
+```
+
+## Citation
+
+If you use this repository, cite the paper as:
+
+```bibtex
+@inproceedings{sovrano2026ruleshap,
+  author    = {Sovrano, Francesco},
+  title     = {Can Global XAI Methods Reveal Injected Behaviours in LLMs? SHAP vs Rule Extraction vs RuleSHAP},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  series    = {KDD '26},
+  year      = {2026},
+  numpages  = {12},
+  address   = {Jeju, Republic of Korea},
+  publisher = {Association for Computing Machinery},
+  doi       = {10.1145/3770855.3818093}
+}
+```

@@ -1,0 +1,16 @@
+group,encoder_a,threshold_a,encoder_b,threshold_b,jaccard,count_delta
+llama3.1,all-MiniLM-L6-v2,0.85,all-MiniLM-L6-v2,0.9,0.8129606585622666,-1942
+llama3.1,all-MiniLM-L6-v2,0.85,all-MiniLM-L6-v2,0.95,0.8109552438209753,-1979
+llama3.1,all-MiniLM-L6-v2,0.85,all-mpnet-base-v2,0.85,0.8197964045917262,194
+llama3.1,all-MiniLM-L6-v2,0.85,all-mpnet-base-v2,0.9,0.8340663734506197,-1350
+llama3.1,all-MiniLM-L6-v2,0.85,all-mpnet-base-v2,0.95,0.8109295882296742,-1957
+llama3.1,all-MiniLM-L6-v2,0.9,all-MiniLM-L6-v2,0.95,0.996087786259542,-37
+llama3.1,all-MiniLM-L6-v2,0.9,all-mpnet-base-v2,0.85,0.7938755980861244,2136
+llama3.1,all-MiniLM-L6-v2,0.9,all-mpnet-base-v2,0.9,0.9403270536482738,592
+llama3.1,all-MiniLM-L6-v2,0.9,all-mpnet-base-v2,0.95,0.9941788338581926,-15
+llama3.1,all-MiniLM-L6-v2,0.95,all-mpnet-base-v2,0.85,0.7920999904589257,2173
+llama3.1,all-MiniLM-L6-v2,0.95,all-mpnet-base-v2,0.9,0.9394141780364469,629
+llama3.1,all-MiniLM-L6-v2,0.95,all-mpnet-base-v2,0.95,0.9967569629912247,22
+llama3.1,all-mpnet-base-v2,0.85,all-mpnet-base-v2,0.9,0.8291183879093199,-1544
+llama3.1,all-mpnet-base-v2,0.85,all-mpnet-base-v2,0.95,0.7932517683043395,-2151
+llama3.1,all-mpnet-base-v2,0.9,all-mpnet-base-v2,0.95,0.9412045889101338,-607
