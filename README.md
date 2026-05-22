@@ -1,4 +1,4 @@
-# Can Global XAI Methods Reveal Injected Behaviours in LLMs?
+# RuleSHAP: Global Rule Extraction for Auditing Injected LLM Behaviours
 
 Official code and data for the paper **"Can Global XAI Methods Reveal Injected Behaviours in LLMs? SHAP vs Rule Extraction vs RuleSHAP"**.
 
@@ -10,6 +10,7 @@ The project evaluates whether global explainability methods can detect deliberat
 - [Project overview](#project-overview)
 - [Repository layout](#repository-layout)
 - [Requirements](#requirements)
+- [External APIs and services](#external-apis-and-services)
 - [Installation](#installation)
 - [Model setup](#model-setup)
 - [Run the experiments](#run-the-experiments)
@@ -92,6 +93,19 @@ Core Python packages are listed in `requirements.txt`. The experiment pipeline a
 - spaCy and NLTK data installed by `setup.sh`
 
 The full experiment suite is compute intensive. Running every model and difficulty level will create many CSV, pickle, and figure files.
+
+
+## External APIs and services
+
+The code can run with local models only, but several scripts support external or local model APIs through `lib.py`:
+
+- OpenAI API: GPT-family model names use `OPENAI_API_KEY` and the `https://api.openai.com/v1` endpoint.
+- Groq API: the Groq-hosted model names in `lib.py` use `GROQ_API_KEY` and the OpenAI-compatible `https://api.groq.com/openai/v1` endpoint.
+- Ollama: `llama3.1` and `llama3.1:70b` use the local Ollama Python client; other non-GPT fallback models use the local OpenAI-compatible Ollama endpoint at `http://localhost:11434/v1`.
+- Hugging Face model downloads: `4_get_output_metrics.py` and `15_rule_guided_mitigation.py` load Transformer pipelines for multilingual sentiment and subjectivity scoring.
+- spaCy and NLTK downloads: `setup.sh` installs language resources used by the text-processing pipeline.
+
+Generated LLM responses are cached under `cache/` when the scripts run, which reduces repeated API calls for the same prompts and settings.
 
 ## Installation
 
