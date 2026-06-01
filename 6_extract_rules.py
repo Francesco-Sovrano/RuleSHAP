@@ -168,6 +168,13 @@ for metric in metrics_list:
 		use_shap_in_lasso=use_shap_in_lasso,
 	)
 	rules = rf_model.get_rules()  # Extracts rules from the model
+
+	# Normalize the output schema before saving: downstream evaluators expect
+	# a canonical `rule` column, while RuleSHAP also exposes `rule_expression`.
+	if 'rule' not in rules.columns and 'rule_expression' in rules.columns:
+		rules = rules.copy()
+		rules['rule'] = rules['rule_expression']
+
 	rules = rules.sort_values("importance", ascending=False)  # Only keep rules with non-zero coefficients
 
 	# Save the rules to a file for inspection

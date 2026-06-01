@@ -217,8 +217,16 @@ def normalize_rules_df(rules_df: pd.DataFrame) -> pd.DataFrame:
         mask = df['type'].astype(str).str.lower().eq('rule')
         if mask.any():
             df = df[mask].copy()
+
+    # RuleSHAP exports `rule_expression`; RuleFit/baselines export `rule`.
+    # Normalize both schemas to a canonical `rule` column for all evaluators.
+    if 'rule' not in df.columns and 'rule_expression' in df.columns:
+        df['rule'] = df['rule_expression']
     if 'rule' not in df.columns:
-        raise KeyError(f"Rules DataFrame must contain a 'rule' column. Got: {list(df.columns)}")
+        raise KeyError(
+            "Rules DataFrame must contain a 'rule' or 'rule_expression' column. "
+            f"Got: {list(df.columns)}"
+        )
     df['rule'] = df['rule'].astype(str).map(clean_rule_expression)
     df = df[df['rule'].map(is_rule_like)].copy()
     if 'weighted_importance' in df.columns:

@@ -2,7 +2,7 @@
 
 Official code and data for the paper **"Can Global XAI Methods Reveal Injected Behaviours in LLMs? SHAP vs Rule Extraction vs RuleSHAP"**.
 
-The project evaluates whether global explainability methods can detect deliberately injected misinformation-related behaviours in large language model outputs. It converts text prompts and model responses into ordinal features, computes SHAP explanations, extracts global rules, and compares RuleSHAP against RuleFit, decision trees, linear models, SHAP-only rankings, and GELPE.
+The project evaluates whether global explainability methods can detect deliberately injected misinformation-related behaviours in large language model outputs. It converts text prompts and model responses into ordinal features, computes SHAP explanations, extracts global rules, and compares RuleSHAP against RuleFit, decision trees, linear models, and SHAP-only rankings.
 
 ## Contents
 
