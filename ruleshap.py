@@ -1107,12 +1107,20 @@ class RuleSHAP(BaseEstimator, TransformerMixin):
 		"""
 		return self.rule_ensemble.transform(X, shap_weights=shap_weights)
 
-	def get_rules(self, X=None, y=None, filter_out_empty_coef=True):
+	def get_rules(self, X=None, y=None, filter_out_empty_coef=True, normalize_negative_rules=False):
 		"""
 		If X is provided, compute per-rule metrics on that dataset.
 		Otherwise, use the training data cached during fit().
 
 		NOTE: metrics are computed against ŷ_model (self.predict), not y.
+
+		By default, rules are reported with their original firing set and a signed
+		``coefficient_sign``/impact direction.  This preserves negative-effect rules
+		as negative rows, which is important for qualitative inspection and for
+		reproducing manuscript tables that include both Positive and Negative
+		directions.  Set ``normalize_negative_rules=True`` to recover the previous
+		legacy display convention, where negative-effect rules are reported as
+		NOT(rule) with a positive sign.
 		"""
 
 		# ---- detect whether LASSO ran ----
@@ -1253,32 +1261,45 @@ class RuleSHAP(BaseEstimator, TransformerMixin):
 
 				effect_pos = (score >= 0)
 
-				if effect_pos:
-					rule_expr = str(rule)
-					fire = fire_base
-					dataset_cov = float(sums[j] / n)
-					is_negated = False
-				else:
+				if normalize_negative_rules and not effect_pos:
+					# Legacy presentation: turn a negative-effect rule into the
+					# complementary positive literal.  This is useful for OR-combo
+					# optimization, but it hides the original negative direction.
 					rule_expr = f"NOT({rule})"
 					fire = ~fire_base
 					dataset_cov = float(not_sums[j] / n)
 					is_negated = True
-
-				sign_pos_for_metrics = True
+					impact_dir = "positive"
+					sign_pos_for_metrics = True
+				else:
+					# Default presentation: keep the original rule and preserve its
+					# signed effect direction.  This lets exported qualitative tables
+					# contain genuine Negative rows.
+					rule_expr = str(rule)
+					fire = fire_base
+					dataset_cov = float(sums[j] / n)
+					is_negated = False
+					impact_dir = "positive" if effect_pos else "negative"
+					sign_pos_for_metrics = effect_pos
 			else:
 				score = coef
-				effect_pos = (coef > 0)
-				if effect_pos:
-					rule_expr = str(rule)
-					dataset_cov = float(rule.global_coverage)
-					is_negated = False
-				else:
+				effect_pos = (coef >= 0)
+				if normalize_negative_rules and not effect_pos:
+					# Legacy presentation without data: complement negative rules and
+					# report the complement as a positive literal.
 					rule_expr = f"NOT({rule})"
 					dataset_cov = float(1.0 - rule.global_coverage)
 					is_negated = True
+					impact_dir = "positive"
+					sign_pos_for_metrics = True
+				else:
+					rule_expr = str(rule)
+					dataset_cov = float(rule.global_coverage)
+					is_negated = False
+					impact_dir = "positive" if effect_pos else "negative"
+					sign_pos_for_metrics = effect_pos
 
 				fire = None
-				sign_pos_for_metrics = True
 
 			if has_lasso:
 				importance = abs(coef)
@@ -1288,8 +1309,6 @@ class RuleSHAP(BaseEstimator, TransformerMixin):
 				1, np.log(np.abs(rule.max_gain))
 			)
 
-
-			impact_dir = "positive"
 
 			row = [
 				int(j), 
