@@ -15,7 +15,7 @@ The project evaluates whether global explainability methods can detect deliberat
 - [External APIs and services](#external-apis-and-services)
 - [Installation](#installation)
 - [Model setup](#model-setup)
-- - [Artifacts and DOI](#artifacts-and-doi)
+- [Artifacts and DOI](#artifacts-and-doi)
 - [Run the experiments](#run-the-experiments)
 - [Optional and rebuttal experiments](#optional-and-rebuttal-experiments)
 - [Outputs](#outputs)
