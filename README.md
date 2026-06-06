@@ -151,6 +151,40 @@ Verify the installation with:
 ollama run llama3.1 "Hello, Llama!"
 ```
 
+## Precomputed artifacts from Zenodo
+
+The full replication package uses three precomputed artifact archives available from Zenodo:
+
+* abstract_model_io.zip
+* cache.zip
+* xai_analyses_results.zip
+
+**Zenodo DOI:** [10.5281/zenodo.20561036](https://doi.org/10.5281/zenodo.20561036)
+
+To reproduce the reported experiments from the released artifacts, copy these three ZIP files into the repository root and unzip them there:
+
+```bash
+cp /path/to/abstract_model_io.zip .
+cp /path/to/cache.zip .
+cp /path/to/xai_analyses_results.zip .
+
+unzip -q abstract_model_io.zip
+unzip -q cache.zip
+unzip -q xai_analyses_results.zip
+```
+
+After extraction, the repository root should contain:
+
+```text
+abstract_model_io/
+cache/
+xai_analyses_results/
+```
+
+These directories contain precomputed topic scores, generated explanations, model-call caches, SHAP outputs, extracted rules, baseline outputs, evaluation summaries, and analysis results. They allow users to inspect and reproduce the main reported results without regenerating all LLM responses from scratch.
+
+The source code is provided in this repository. The Zenodo record contains the large reproducibility artifacts.
+
 ## Run the experiments
 
 ### Full pipeline
